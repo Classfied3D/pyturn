@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-// add the following code to client.go
+// start injected.go
 
 import "errors"
 
@@ -67,3 +67,5 @@ func NetUDPAddrChangePort(addr net.Addr, port int) error {
 	udpAddr.Port = port
 	return nil
 }
+
+// end injected.go

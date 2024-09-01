@@ -1,5 +1,5 @@
 import time
-path = "pyturn/turn.go"
+path = "turn/pyturn/turn.go"
 with open(path, "r+") as file:
     contents = file.read()
 while True:
