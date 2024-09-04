@@ -2523,493 +2523,6 @@ func turn_RelayAddressGenerator_Validate(_handle CGoHandle) *C.char {
 
 // ---- Structs ---
 
-// --- wrapping struct: turn.ClientConfig ---
-//
-//export turn_ClientConfig_CTor
-func turn_ClientConfig_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_ClientConfig(&turn.ClientConfig{}))
-}
-
-//export turn_ClientConfig_STUNServerAddr_Get
-func turn_ClientConfig_STUNServerAddr_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return C.CString(op.STUNServerAddr)
-}
-
-//export turn_ClientConfig_STUNServerAddr_Set
-func turn_ClientConfig_STUNServerAddr_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.STUNServerAddr = C.GoString(val)
-}
-
-//export turn_ClientConfig_TURNServerAddr_Get
-func turn_ClientConfig_TURNServerAddr_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return C.CString(op.TURNServerAddr)
-}
-
-//export turn_ClientConfig_TURNServerAddr_Set
-func turn_ClientConfig_TURNServerAddr_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.TURNServerAddr = C.GoString(val)
-}
-
-//export turn_ClientConfig_Username_Get
-func turn_ClientConfig_Username_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return C.CString(op.Username)
-}
-
-//export turn_ClientConfig_Username_Set
-func turn_ClientConfig_Username_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.Username = C.GoString(val)
-}
-
-//export turn_ClientConfig_Password_Get
-func turn_ClientConfig_Password_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return C.CString(op.Password)
-}
-
-//export turn_ClientConfig_Password_Set
-func turn_ClientConfig_Password_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.Password = C.GoString(val)
-}
-
-//export turn_ClientConfig_Realm_Get
-func turn_ClientConfig_Realm_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return C.CString(op.Realm)
-}
-
-//export turn_ClientConfig_Realm_Set
-func turn_ClientConfig_Realm_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.Realm = C.GoString(val)
-}
-
-//export turn_ClientConfig_Software_Get
-func turn_ClientConfig_Software_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return C.CString(op.Software)
-}
-
-//export turn_ClientConfig_Software_Set
-func turn_ClientConfig_Software_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.Software = C.GoString(val)
-}
-
-//export turn_ClientConfig_RTO_Get
-func turn_ClientConfig_RTO_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return C.longlong(int64(op.RTO))
-}
-
-//export turn_ClientConfig_RTO_Set
-func turn_ClientConfig_RTO_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.RTO = time.Duration(int64(val))
-}
-
-//export turn_ClientConfig_Conn_Get
-func turn_ClientConfig_Conn_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return handleFromPtr_net_PacketConn(op.Conn)
-}
-
-//export turn_ClientConfig_Conn_Set
-func turn_ClientConfig_Conn_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.Conn = ptrFromHandle_net_PacketConn(val)
-}
-
-//export turn_ClientConfig_Net_Get
-func turn_ClientConfig_Net_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return handleFromPtr_transport_Net(op.Net)
-}
-
-//export turn_ClientConfig_Net_Set
-func turn_ClientConfig_Net_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.Net = ptrFromHandle_transport_Net(val)
-}
-
-//export turn_ClientConfig_LoggerFactory_Get
-func turn_ClientConfig_LoggerFactory_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	return handleFromPtr_logging_LoggerFactory(op.LoggerFactory)
-}
-
-//export turn_ClientConfig_LoggerFactory_Set
-func turn_ClientConfig_LoggerFactory_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ClientConfig(handle)
-	op.LoggerFactory = ptrFromHandle_logging_LoggerFactory(val)
-}
-
-// --- wrapping struct: turn.ListenerConfig ---
-//
-//export turn_ListenerConfig_CTor
-func turn_ListenerConfig_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_ListenerConfig(&turn.ListenerConfig{}))
-}
-
-//export turn_ListenerConfig_Listener_Get
-func turn_ListenerConfig_Listener_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ListenerConfig(handle)
-	return handleFromPtr_net_Listener(op.Listener)
-}
-
-//export turn_ListenerConfig_Listener_Set
-func turn_ListenerConfig_Listener_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ListenerConfig(handle)
-	op.Listener = ptrFromHandle_net_Listener(val)
-}
-
-//export turn_ListenerConfig_RelayAddressGenerator_Get
-func turn_ListenerConfig_RelayAddressGenerator_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ListenerConfig(handle)
-	return handleFromPtr_turn_RelayAddressGenerator(op.RelayAddressGenerator)
-}
-
-//export turn_ListenerConfig_RelayAddressGenerator_Set
-func turn_ListenerConfig_RelayAddressGenerator_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ListenerConfig(handle)
-	op.RelayAddressGenerator = ptrFromHandle_turn_RelayAddressGenerator(val)
-}
-
-// --- wrapping struct: turn.RecievedPacket ---
-//
-//export turn_RecievedPacket_CTor
-func turn_RecievedPacket_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_RecievedPacket(&turn.RecievedPacket{}))
-}
-
-//export turn_RecievedPacket_N_Get
-func turn_RecievedPacket_N_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_turn_RecievedPacket(handle)
-	return C.longlong(op.N)
-}
-
-//export turn_RecievedPacket_N_Set
-func turn_RecievedPacket_N_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_turn_RecievedPacket(handle)
-	op.N = int(val)
-}
-
-//export turn_RecievedPacket_Addr_Get
-func turn_RecievedPacket_Addr_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_RecievedPacket(handle)
-	return handleFromPtr_net_Addr(op.Addr)
-}
-
-//export turn_RecievedPacket_Addr_Set
-func turn_RecievedPacket_Addr_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_RecievedPacket(handle)
-	op.Addr = ptrFromHandle_net_Addr(val)
-}
-
-// --- wrapping struct: turn.RelayAddressGeneratorPortRange ---
-//
-//export turn_RelayAddressGeneratorPortRange_CTor
-func turn_RelayAddressGeneratorPortRange_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_RelayAddressGeneratorPortRange(&turn.RelayAddressGeneratorPortRange{}))
-}
-
-//export turn_RelayAddressGeneratorPortRange_RelayAddress_Get
-func turn_RelayAddressGeneratorPortRange_RelayAddress_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	return handleFromPtr_net_IP(&op.RelayAddress)
-}
-
-//export turn_RelayAddressGeneratorPortRange_RelayAddress_Set
-func turn_RelayAddressGeneratorPortRange_RelayAddress_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	op.RelayAddress = deptrFromHandle_net_IP(val)
-}
-
-//export turn_RelayAddressGeneratorPortRange_MinPort_Get
-func turn_RelayAddressGeneratorPortRange_MinPort_Get(handle CGoHandle) C.ushort {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	return C.ushort(op.MinPort)
-}
-
-//export turn_RelayAddressGeneratorPortRange_MinPort_Set
-func turn_RelayAddressGeneratorPortRange_MinPort_Set(handle CGoHandle, val C.ushort) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	op.MinPort = uint16(val)
-}
-
-//export turn_RelayAddressGeneratorPortRange_MaxPort_Get
-func turn_RelayAddressGeneratorPortRange_MaxPort_Get(handle CGoHandle) C.ushort {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	return C.ushort(op.MaxPort)
-}
-
-//export turn_RelayAddressGeneratorPortRange_MaxPort_Set
-func turn_RelayAddressGeneratorPortRange_MaxPort_Set(handle CGoHandle, val C.ushort) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	op.MaxPort = uint16(val)
-}
-
-//export turn_RelayAddressGeneratorPortRange_MaxRetries_Get
-func turn_RelayAddressGeneratorPortRange_MaxRetries_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	return C.longlong(op.MaxRetries)
-}
-
-//export turn_RelayAddressGeneratorPortRange_MaxRetries_Set
-func turn_RelayAddressGeneratorPortRange_MaxRetries_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	op.MaxRetries = int(val)
-}
-
-//export turn_RelayAddressGeneratorPortRange_Rand_Get
-func turn_RelayAddressGeneratorPortRange_Rand_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	return handleFromPtr_randutil_MathRandomGenerator(op.Rand)
-}
-
-//export turn_RelayAddressGeneratorPortRange_Rand_Set
-func turn_RelayAddressGeneratorPortRange_Rand_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	op.Rand = ptrFromHandle_randutil_MathRandomGenerator(val)
-}
-
-//export turn_RelayAddressGeneratorPortRange_Address_Get
-func turn_RelayAddressGeneratorPortRange_Address_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	return C.CString(op.Address)
-}
-
-//export turn_RelayAddressGeneratorPortRange_Address_Set
-func turn_RelayAddressGeneratorPortRange_Address_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	op.Address = C.GoString(val)
-}
-
-//export turn_RelayAddressGeneratorPortRange_Net_Get
-func turn_RelayAddressGeneratorPortRange_Net_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	return handleFromPtr_transport_Net(op.Net)
-}
-
-//export turn_RelayAddressGeneratorPortRange_Net_Set
-func turn_RelayAddressGeneratorPortRange_Net_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
-	op.Net = ptrFromHandle_transport_Net(val)
-}
-
-//export turn_RelayAddressGeneratorPortRange_Validate
-func turn_RelayAddressGeneratorPortRange_Validate(_handle CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.RelayAddressGeneratorPortRange")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.RelayAddressGeneratorPortRange{})).(*turn.RelayAddressGeneratorPortRange).Validate()
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-// --- wrapping struct: turn.STUNConn ---
-//
-//export turn_STUNConn_CTor
-func turn_STUNConn_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_STUNConn(&turn.STUNConn{}))
-}
-
-//export turn_STUNConn_WriteTo
-func turn_STUNConn_WriteTo(_handle CGoHandle, p CGoHandle, q CGoHandle) C.longlong {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return C.longlong(0)
-	}
-	cret, __err := gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).WriteTo(deptrFromHandle_Slice_byte(p), ptrFromHandle_net_Addr(q))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return C.longlong(0)
-	}
-	return C.longlong(cret)
-}
-
-//export turn_STUNConn_Close
-func turn_STUNConn_Close(_handle CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).Close()
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-//export turn_STUNConn_LocalAddr
-func turn_STUNConn_LocalAddr(_handle CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return handleFromPtr_net_Addr(nil)
-	}
-	return handleFromPtr_net_Addr(gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).LocalAddr())
-
-}
-
-//export turn_STUNConn_SetDeadline
-func turn_STUNConn_SetDeadline(_handle CGoHandle, t CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetDeadline(*ptrFromHandle_time_Time(t))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-//export turn_STUNConn_SetReadDeadline
-func turn_STUNConn_SetReadDeadline(_handle CGoHandle, t CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetReadDeadline(*ptrFromHandle_time_Time(t))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-//export turn_STUNConn_SetWriteDeadline
-func turn_STUNConn_SetWriteDeadline(_handle CGoHandle, t CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetWriteDeadline(*ptrFromHandle_time_Time(t))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-// --- wrapping struct: turn.ServerConfig ---
-//
-//export turn_ServerConfig_CTor
-func turn_ServerConfig_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_ServerConfig(&turn.ServerConfig{}))
-}
-
-//export turn_ServerConfig_PacketConnConfigs_Get
-func turn_ServerConfig_PacketConnConfigs_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return handleFromPtr_Slice_turn_PacketConnConfig(&op.PacketConnConfigs)
-}
-
-//export turn_ServerConfig_PacketConnConfigs_Set
-func turn_ServerConfig_PacketConnConfigs_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.PacketConnConfigs = deptrFromHandle_Slice_turn_PacketConnConfig(val)
-}
-
-//export turn_ServerConfig_ListenerConfigs_Get
-func turn_ServerConfig_ListenerConfigs_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return handleFromPtr_Slice_turn_ListenerConfig(&op.ListenerConfigs)
-}
-
-//export turn_ServerConfig_ListenerConfigs_Set
-func turn_ServerConfig_ListenerConfigs_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.ListenerConfigs = deptrFromHandle_Slice_turn_ListenerConfig(val)
-}
-
-//export turn_ServerConfig_LoggerFactory_Get
-func turn_ServerConfig_LoggerFactory_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return handleFromPtr_logging_LoggerFactory(op.LoggerFactory)
-}
-
-//export turn_ServerConfig_LoggerFactory_Set
-func turn_ServerConfig_LoggerFactory_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.LoggerFactory = ptrFromHandle_logging_LoggerFactory(val)
-}
-
-//export turn_ServerConfig_Realm_Get
-func turn_ServerConfig_Realm_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return C.CString(op.Realm)
-}
-
-//export turn_ServerConfig_Realm_Set
-func turn_ServerConfig_Realm_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.Realm = C.GoString(val)
-}
-
-//export turn_ServerConfig_ChannelBindTimeout_Get
-func turn_ServerConfig_ChannelBindTimeout_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return C.longlong(int64(op.ChannelBindTimeout))
-}
-
-//export turn_ServerConfig_ChannelBindTimeout_Set
-func turn_ServerConfig_ChannelBindTimeout_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.ChannelBindTimeout = time.Duration(int64(val))
-}
-
-//export turn_ServerConfig_InboundMTU_Get
-func turn_ServerConfig_InboundMTU_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return C.longlong(op.InboundMTU)
-}
-
-//export turn_ServerConfig_InboundMTU_Set
-func turn_ServerConfig_InboundMTU_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.InboundMTU = int(val)
-}
-
 // --- wrapping struct: turn.Client ---
 //
 //export turn_Client_CTor
@@ -3266,53 +2779,66 @@ func turn_Client_HandleInbound(_handle CGoHandle, data CGoHandle, myfrom CGoHand
 	return boolGoToPy(cret)
 }
 
-// --- wrapping struct: turn.RelayAddressGeneratorNone ---
+// --- wrapping struct: turn.ListenerConfig ---
 //
-//export turn_RelayAddressGeneratorNone_CTor
-func turn_RelayAddressGeneratorNone_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_RelayAddressGeneratorNone(&turn.RelayAddressGeneratorNone{}))
+//export turn_ListenerConfig_CTor
+func turn_ListenerConfig_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_ListenerConfig(&turn.ListenerConfig{}))
 }
 
-//export turn_RelayAddressGeneratorNone_Address_Get
-func turn_RelayAddressGeneratorNone_Address_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	return C.CString(op.Address)
+//export turn_ListenerConfig_Listener_Get
+func turn_ListenerConfig_Listener_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ListenerConfig(handle)
+	return handleFromPtr_net_Listener(op.Listener)
 }
 
-//export turn_RelayAddressGeneratorNone_Address_Set
-func turn_RelayAddressGeneratorNone_Address_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	op.Address = C.GoString(val)
+//export turn_ListenerConfig_Listener_Set
+func turn_ListenerConfig_Listener_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ListenerConfig(handle)
+	op.Listener = ptrFromHandle_net_Listener(val)
 }
 
-//export turn_RelayAddressGeneratorNone_Net_Get
-func turn_RelayAddressGeneratorNone_Net_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	return handleFromPtr_transport_Net(op.Net)
+//export turn_ListenerConfig_RelayAddressGenerator_Get
+func turn_ListenerConfig_RelayAddressGenerator_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ListenerConfig(handle)
+	return handleFromPtr_turn_RelayAddressGenerator(op.RelayAddressGenerator)
 }
 
-//export turn_RelayAddressGeneratorNone_Net_Set
-func turn_RelayAddressGeneratorNone_Net_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	op.Net = ptrFromHandle_transport_Net(val)
+//export turn_ListenerConfig_RelayAddressGenerator_Set
+func turn_ListenerConfig_RelayAddressGenerator_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ListenerConfig(handle)
+	op.RelayAddressGenerator = ptrFromHandle_turn_RelayAddressGenerator(val)
 }
 
-//export turn_RelayAddressGeneratorNone_Validate
-func turn_RelayAddressGeneratorNone_Validate(_handle CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.RelayAddressGeneratorNone")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.RelayAddressGeneratorNone{})).(*turn.RelayAddressGeneratorNone).Validate()
+// --- wrapping struct: turn.PacketConnConfig ---
+//
+//export turn_PacketConnConfig_CTor
+func turn_PacketConnConfig_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_PacketConnConfig(&turn.PacketConnConfig{}))
+}
 
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
+//export turn_PacketConnConfig_PacketConn_Get
+func turn_PacketConnConfig_PacketConn_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_PacketConnConfig(handle)
+	return handleFromPtr_net_PacketConn(op.PacketConn)
+}
+
+//export turn_PacketConnConfig_PacketConn_Set
+func turn_PacketConnConfig_PacketConn_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_PacketConnConfig(handle)
+	op.PacketConn = ptrFromHandle_net_PacketConn(val)
+}
+
+//export turn_PacketConnConfig_RelayAddressGenerator_Get
+func turn_PacketConnConfig_RelayAddressGenerator_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_PacketConnConfig(handle)
+	return handleFromPtr_turn_RelayAddressGenerator(op.RelayAddressGenerator)
+}
+
+//export turn_PacketConnConfig_RelayAddressGenerator_Set
+func turn_PacketConnConfig_RelayAddressGenerator_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_PacketConnConfig(handle)
+	op.RelayAddressGenerator = ptrFromHandle_turn_RelayAddressGenerator(val)
 }
 
 // --- wrapping struct: turn.RelayAddressGeneratorStatic ---
@@ -3376,6 +2902,432 @@ func turn_RelayAddressGeneratorStatic_Validate(_handle CGoHandle) *C.char {
 	return C.CString("")
 }
 
+// --- wrapping struct: turn.STUNConn ---
+//
+//export turn_STUNConn_CTor
+func turn_STUNConn_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_STUNConn(&turn.STUNConn{}))
+}
+
+//export turn_STUNConn_WriteTo
+func turn_STUNConn_WriteTo(_handle CGoHandle, p CGoHandle, q CGoHandle) C.longlong {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return C.longlong(0)
+	}
+	cret, __err := gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).WriteTo(deptrFromHandle_Slice_byte(p), ptrFromHandle_net_Addr(q))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return C.longlong(0)
+	}
+	return C.longlong(cret)
+}
+
+//export turn_STUNConn_Close
+func turn_STUNConn_Close(_handle CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).Close()
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_STUNConn_LocalAddr
+func turn_STUNConn_LocalAddr(_handle CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return handleFromPtr_net_Addr(nil)
+	}
+	return handleFromPtr_net_Addr(gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).LocalAddr())
+
+}
+
+//export turn_STUNConn_SetDeadline
+func turn_STUNConn_SetDeadline(_handle CGoHandle, t CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetDeadline(*ptrFromHandle_time_Time(t))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_STUNConn_SetReadDeadline
+func turn_STUNConn_SetReadDeadline(_handle CGoHandle, t CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetReadDeadline(*ptrFromHandle_time_Time(t))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_STUNConn_SetWriteDeadline
+func turn_STUNConn_SetWriteDeadline(_handle CGoHandle, t CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetWriteDeadline(*ptrFromHandle_time_Time(t))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+// --- wrapping struct: turn.ClientConfig ---
+//
+//export turn_ClientConfig_CTor
+func turn_ClientConfig_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_ClientConfig(&turn.ClientConfig{}))
+}
+
+//export turn_ClientConfig_STUNServerAddr_Get
+func turn_ClientConfig_STUNServerAddr_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return C.CString(op.STUNServerAddr)
+}
+
+//export turn_ClientConfig_STUNServerAddr_Set
+func turn_ClientConfig_STUNServerAddr_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.STUNServerAddr = C.GoString(val)
+}
+
+//export turn_ClientConfig_TURNServerAddr_Get
+func turn_ClientConfig_TURNServerAddr_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return C.CString(op.TURNServerAddr)
+}
+
+//export turn_ClientConfig_TURNServerAddr_Set
+func turn_ClientConfig_TURNServerAddr_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.TURNServerAddr = C.GoString(val)
+}
+
+//export turn_ClientConfig_Username_Get
+func turn_ClientConfig_Username_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return C.CString(op.Username)
+}
+
+//export turn_ClientConfig_Username_Set
+func turn_ClientConfig_Username_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.Username = C.GoString(val)
+}
+
+//export turn_ClientConfig_Password_Get
+func turn_ClientConfig_Password_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return C.CString(op.Password)
+}
+
+//export turn_ClientConfig_Password_Set
+func turn_ClientConfig_Password_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.Password = C.GoString(val)
+}
+
+//export turn_ClientConfig_Realm_Get
+func turn_ClientConfig_Realm_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return C.CString(op.Realm)
+}
+
+//export turn_ClientConfig_Realm_Set
+func turn_ClientConfig_Realm_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.Realm = C.GoString(val)
+}
+
+//export turn_ClientConfig_Software_Get
+func turn_ClientConfig_Software_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return C.CString(op.Software)
+}
+
+//export turn_ClientConfig_Software_Set
+func turn_ClientConfig_Software_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.Software = C.GoString(val)
+}
+
+//export turn_ClientConfig_RTO_Get
+func turn_ClientConfig_RTO_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return C.longlong(int64(op.RTO))
+}
+
+//export turn_ClientConfig_RTO_Set
+func turn_ClientConfig_RTO_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.RTO = time.Duration(int64(val))
+}
+
+//export turn_ClientConfig_Conn_Get
+func turn_ClientConfig_Conn_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return handleFromPtr_net_PacketConn(op.Conn)
+}
+
+//export turn_ClientConfig_Conn_Set
+func turn_ClientConfig_Conn_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.Conn = ptrFromHandle_net_PacketConn(val)
+}
+
+//export turn_ClientConfig_Net_Get
+func turn_ClientConfig_Net_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return handleFromPtr_transport_Net(op.Net)
+}
+
+//export turn_ClientConfig_Net_Set
+func turn_ClientConfig_Net_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.Net = ptrFromHandle_transport_Net(val)
+}
+
+//export turn_ClientConfig_LoggerFactory_Get
+func turn_ClientConfig_LoggerFactory_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	return handleFromPtr_logging_LoggerFactory(op.LoggerFactory)
+}
+
+//export turn_ClientConfig_LoggerFactory_Set
+func turn_ClientConfig_LoggerFactory_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ClientConfig(handle)
+	op.LoggerFactory = ptrFromHandle_logging_LoggerFactory(val)
+}
+
+// --- wrapping struct: turn.RecievedPacket ---
+//
+//export turn_RecievedPacket_CTor
+func turn_RecievedPacket_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_RecievedPacket(&turn.RecievedPacket{}))
+}
+
+//export turn_RecievedPacket_N_Get
+func turn_RecievedPacket_N_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_turn_RecievedPacket(handle)
+	return C.longlong(op.N)
+}
+
+//export turn_RecievedPacket_N_Set
+func turn_RecievedPacket_N_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_turn_RecievedPacket(handle)
+	op.N = int(val)
+}
+
+//export turn_RecievedPacket_Addr_Get
+func turn_RecievedPacket_Addr_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_RecievedPacket(handle)
+	return handleFromPtr_net_Addr(op.Addr)
+}
+
+//export turn_RecievedPacket_Addr_Set
+func turn_RecievedPacket_Addr_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_RecievedPacket(handle)
+	op.Addr = ptrFromHandle_net_Addr(val)
+}
+
+// --- wrapping struct: turn.RelayAddressGeneratorNone ---
+//
+//export turn_RelayAddressGeneratorNone_CTor
+func turn_RelayAddressGeneratorNone_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_RelayAddressGeneratorNone(&turn.RelayAddressGeneratorNone{}))
+}
+
+//export turn_RelayAddressGeneratorNone_Address_Get
+func turn_RelayAddressGeneratorNone_Address_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	return C.CString(op.Address)
+}
+
+//export turn_RelayAddressGeneratorNone_Address_Set
+func turn_RelayAddressGeneratorNone_Address_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	op.Address = C.GoString(val)
+}
+
+//export turn_RelayAddressGeneratorNone_Net_Get
+func turn_RelayAddressGeneratorNone_Net_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	return handleFromPtr_transport_Net(op.Net)
+}
+
+//export turn_RelayAddressGeneratorNone_Net_Set
+func turn_RelayAddressGeneratorNone_Net_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	op.Net = ptrFromHandle_transport_Net(val)
+}
+
+//export turn_RelayAddressGeneratorNone_Validate
+func turn_RelayAddressGeneratorNone_Validate(_handle CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.RelayAddressGeneratorNone")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.RelayAddressGeneratorNone{})).(*turn.RelayAddressGeneratorNone).Validate()
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+// --- wrapping struct: turn.RelayAddressGeneratorPortRange ---
+//
+//export turn_RelayAddressGeneratorPortRange_CTor
+func turn_RelayAddressGeneratorPortRange_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_RelayAddressGeneratorPortRange(&turn.RelayAddressGeneratorPortRange{}))
+}
+
+//export turn_RelayAddressGeneratorPortRange_RelayAddress_Get
+func turn_RelayAddressGeneratorPortRange_RelayAddress_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	return handleFromPtr_net_IP(&op.RelayAddress)
+}
+
+//export turn_RelayAddressGeneratorPortRange_RelayAddress_Set
+func turn_RelayAddressGeneratorPortRange_RelayAddress_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	op.RelayAddress = deptrFromHandle_net_IP(val)
+}
+
+//export turn_RelayAddressGeneratorPortRange_MinPort_Get
+func turn_RelayAddressGeneratorPortRange_MinPort_Get(handle CGoHandle) C.ushort {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	return C.ushort(op.MinPort)
+}
+
+//export turn_RelayAddressGeneratorPortRange_MinPort_Set
+func turn_RelayAddressGeneratorPortRange_MinPort_Set(handle CGoHandle, val C.ushort) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	op.MinPort = uint16(val)
+}
+
+//export turn_RelayAddressGeneratorPortRange_MaxPort_Get
+func turn_RelayAddressGeneratorPortRange_MaxPort_Get(handle CGoHandle) C.ushort {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	return C.ushort(op.MaxPort)
+}
+
+//export turn_RelayAddressGeneratorPortRange_MaxPort_Set
+func turn_RelayAddressGeneratorPortRange_MaxPort_Set(handle CGoHandle, val C.ushort) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	op.MaxPort = uint16(val)
+}
+
+//export turn_RelayAddressGeneratorPortRange_MaxRetries_Get
+func turn_RelayAddressGeneratorPortRange_MaxRetries_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	return C.longlong(op.MaxRetries)
+}
+
+//export turn_RelayAddressGeneratorPortRange_MaxRetries_Set
+func turn_RelayAddressGeneratorPortRange_MaxRetries_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	op.MaxRetries = int(val)
+}
+
+//export turn_RelayAddressGeneratorPortRange_Rand_Get
+func turn_RelayAddressGeneratorPortRange_Rand_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	return handleFromPtr_randutil_MathRandomGenerator(op.Rand)
+}
+
+//export turn_RelayAddressGeneratorPortRange_Rand_Set
+func turn_RelayAddressGeneratorPortRange_Rand_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	op.Rand = ptrFromHandle_randutil_MathRandomGenerator(val)
+}
+
+//export turn_RelayAddressGeneratorPortRange_Address_Get
+func turn_RelayAddressGeneratorPortRange_Address_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	return C.CString(op.Address)
+}
+
+//export turn_RelayAddressGeneratorPortRange_Address_Set
+func turn_RelayAddressGeneratorPortRange_Address_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	op.Address = C.GoString(val)
+}
+
+//export turn_RelayAddressGeneratorPortRange_Net_Get
+func turn_RelayAddressGeneratorPortRange_Net_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	return handleFromPtr_transport_Net(op.Net)
+}
+
+//export turn_RelayAddressGeneratorPortRange_Net_Set
+func turn_RelayAddressGeneratorPortRange_Net_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorPortRange(handle)
+	op.Net = ptrFromHandle_transport_Net(val)
+}
+
+//export turn_RelayAddressGeneratorPortRange_Validate
+func turn_RelayAddressGeneratorPortRange_Validate(_handle CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.RelayAddressGeneratorPortRange")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.RelayAddressGeneratorPortRange{})).(*turn.RelayAddressGeneratorPortRange).Validate()
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
 // --- wrapping struct: turn.Server ---
 //
 //export turn_Server_CTor
@@ -3413,35 +3365,83 @@ func turn_Server_Close(_handle CGoHandle) *C.char {
 	return C.CString("")
 }
 
-// --- wrapping struct: turn.PacketConnConfig ---
+// --- wrapping struct: turn.ServerConfig ---
 //
-//export turn_PacketConnConfig_CTor
-func turn_PacketConnConfig_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_PacketConnConfig(&turn.PacketConnConfig{}))
+//export turn_ServerConfig_CTor
+func turn_ServerConfig_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_ServerConfig(&turn.ServerConfig{}))
 }
 
-//export turn_PacketConnConfig_PacketConn_Get
-func turn_PacketConnConfig_PacketConn_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_PacketConnConfig(handle)
-	return handleFromPtr_net_PacketConn(op.PacketConn)
+//export turn_ServerConfig_PacketConnConfigs_Get
+func turn_ServerConfig_PacketConnConfigs_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return handleFromPtr_Slice_turn_PacketConnConfig(&op.PacketConnConfigs)
 }
 
-//export turn_PacketConnConfig_PacketConn_Set
-func turn_PacketConnConfig_PacketConn_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_PacketConnConfig(handle)
-	op.PacketConn = ptrFromHandle_net_PacketConn(val)
+//export turn_ServerConfig_PacketConnConfigs_Set
+func turn_ServerConfig_PacketConnConfigs_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.PacketConnConfigs = deptrFromHandle_Slice_turn_PacketConnConfig(val)
 }
 
-//export turn_PacketConnConfig_RelayAddressGenerator_Get
-func turn_PacketConnConfig_RelayAddressGenerator_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_PacketConnConfig(handle)
-	return handleFromPtr_turn_RelayAddressGenerator(op.RelayAddressGenerator)
+//export turn_ServerConfig_ListenerConfigs_Get
+func turn_ServerConfig_ListenerConfigs_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return handleFromPtr_Slice_turn_ListenerConfig(&op.ListenerConfigs)
 }
 
-//export turn_PacketConnConfig_RelayAddressGenerator_Set
-func turn_PacketConnConfig_RelayAddressGenerator_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_PacketConnConfig(handle)
-	op.RelayAddressGenerator = ptrFromHandle_turn_RelayAddressGenerator(val)
+//export turn_ServerConfig_ListenerConfigs_Set
+func turn_ServerConfig_ListenerConfigs_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.ListenerConfigs = deptrFromHandle_Slice_turn_ListenerConfig(val)
+}
+
+//export turn_ServerConfig_LoggerFactory_Get
+func turn_ServerConfig_LoggerFactory_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return handleFromPtr_logging_LoggerFactory(op.LoggerFactory)
+}
+
+//export turn_ServerConfig_LoggerFactory_Set
+func turn_ServerConfig_LoggerFactory_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.LoggerFactory = ptrFromHandle_logging_LoggerFactory(val)
+}
+
+//export turn_ServerConfig_Realm_Get
+func turn_ServerConfig_Realm_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return C.CString(op.Realm)
+}
+
+//export turn_ServerConfig_Realm_Set
+func turn_ServerConfig_Realm_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.Realm = C.GoString(val)
+}
+
+//export turn_ServerConfig_ChannelBindTimeout_Get
+func turn_ServerConfig_ChannelBindTimeout_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return C.longlong(int64(op.ChannelBindTimeout))
+}
+
+//export turn_ServerConfig_ChannelBindTimeout_Set
+func turn_ServerConfig_ChannelBindTimeout_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.ChannelBindTimeout = time.Duration(int64(val))
+}
+
+//export turn_ServerConfig_InboundMTU_Get
+func turn_ServerConfig_InboundMTU_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return C.longlong(op.InboundMTU)
+}
+
+//export turn_ServerConfig_InboundMTU_Set
+func turn_ServerConfig_InboundMTU_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.InboundMTU = int(val)
 }
 
 // ---- Slices ---
@@ -3449,29 +3449,6 @@ func turn_PacketConnConfig_RelayAddressGenerator_Set(handle CGoHandle, val CGoHa
 // ---- Maps ---
 
 // ---- Constructors ---
-
-//export turn_NetConnReadFrom
-func turn_NetConnReadFrom(conn CGoHandle, p CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := turn.NetConnReadFrom(ptrFromHandle_net_PacketConn(conn), deptrFromHandle_Slice_byte(p))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_turn_RecievedPacket(nil)
-	}
-	return handleFromPtr_turn_RecievedPacket(&cret)
-}
-
-//export turn_NewSTUNConn
-func turn_NewSTUNConn(nextConn CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return handleFromPtr_Ptr_turn_STUNConn(turn.NewSTUNConn(ptrFromHandle_net_Conn(nextConn)))
-
-}
 
 //export turn_NewClient
 func turn_NewClient(config CGoHandle) CGoHandle {
@@ -3486,6 +3463,29 @@ func turn_NewClient(config CGoHandle) CGoHandle {
 		return handleFromPtr_Ptr_turn_Client(nil)
 	}
 	return handleFromPtr_Ptr_turn_Client(cret)
+}
+
+//export turn_NewSTUNConn
+func turn_NewSTUNConn(nextConn CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return handleFromPtr_Ptr_turn_STUNConn(turn.NewSTUNConn(ptrFromHandle_net_Conn(nextConn)))
+
+}
+
+//export turn_NetConnReadFrom
+func turn_NetConnReadFrom(conn CGoHandle, p CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	cret, __err := turn.NetConnReadFrom(ptrFromHandle_net_PacketConn(conn), deptrFromHandle_Slice_byte(p))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return handleFromPtr_turn_RecievedPacket(nil)
+	}
+	return handleFromPtr_turn_RecievedPacket(&cret)
 }
 
 //export turn_NewServer
@@ -3505,59 +3505,12 @@ func turn_NewServer(config CGoHandle) CGoHandle {
 
 // ---- Functions ---
 
-//export turn_NetResolveUDPAddr
-func turn_NetResolveUDPAddr(network *C.char, address *C.char) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := turn.NetResolveUDPAddr(C.GoString(network), C.GoString(address))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_net_UDPAddr(nil)
-	}
-	return handleFromPtr_net_UDPAddr(&cret)
-}
-
-//export turn_DefaultPermissionHandler
-func turn_DefaultPermissionHandler(arg_0 CGoHandle, arg_1 CGoHandle) C.char {
+//export turn_NetAddrString
+func turn_NetAddrString(addr CGoHandle) *C.char {
 	_saved_thread := C.PyEval_SaveThread()
 	defer C.PyEval_RestoreThread(_saved_thread)
-	return boolGoToPy(turn.DefaultPermissionHandler(ptrFromHandle_net_Addr(arg_0), deptrFromHandle_net_IP(arg_1)))
+	return C.CString(turn.NetAddrString(ptrFromHandle_net_Addr(addr)))
 
-}
-
-//export turn_GenerateAuthKey
-func turn_GenerateAuthKey(username *C.char, realm *C.char, password *C.char) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	cret := turn.GenerateAuthKey(C.GoString(username), C.GoString(realm), C.GoString(password))
-
-	return handleFromPtr_Slice_byte(&cret)
-}
-
-//export turn_NetConnGetLocalAddr
-func turn_NetConnGetLocalAddr(conn CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return handleFromPtr_net_Addr(turn.NetConnGetLocalAddr(ptrFromHandle_net_PacketConn(conn)))
-
-}
-
-//export turn_NetConnSetTimeout
-func turn_NetConnSetTimeout(conn CGoHandle, sec C.longlong) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	var __err error
-	__err = turn.NetConnSetTimeout(ptrFromHandle_net_PacketConn(conn), int(sec))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
 }
 
 //export turn_NetConnWriteTo
@@ -3575,26 +3528,50 @@ func turn_NetConnWriteTo(conn CGoHandle, p CGoHandle, addr CGoHandle) C.longlong
 	return C.longlong(cret)
 }
 
-//export turn_NetListenPacket
-func turn_NetListenPacket(network *C.char, address *C.char) CGoHandle {
+//export turn_NetResolveUDPAddr
+func turn_NetResolveUDPAddr(network *C.char, address *C.char) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := turn.NetListenPacket(C.GoString(network), C.GoString(address))
+	cret, __err := turn.NetResolveUDPAddr(C.GoString(network), C.GoString(address))
 
 	C.PyEval_RestoreThread(_saved_thread)
 	if __err != nil {
 		estr := C.CString(__err.Error())
 		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
 		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_net_PacketConn(nil)
+		return handleFromPtr_net_UDPAddr(nil)
 	}
-	return handleFromPtr_net_PacketConn(cret)
+	return handleFromPtr_net_UDPAddr(&cret)
 }
 
-//export turn_NetAddrString
-func turn_NetAddrString(addr CGoHandle) *C.char {
+//export turn_GenerateAuthKey
+func turn_GenerateAuthKey(username *C.char, realm *C.char, password *C.char) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
 	defer C.PyEval_RestoreThread(_saved_thread)
-	return C.CString(turn.NetAddrString(ptrFromHandle_net_Addr(addr)))
+	cret := turn.GenerateAuthKey(C.GoString(username), C.GoString(realm), C.GoString(password))
+
+	return handleFromPtr_Slice_byte(&cret)
+}
+
+//export turn_NetConnSetTimeout
+func turn_NetConnSetTimeout(conn CGoHandle, sec C.longlong) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	var __err error
+	__err = turn.NetConnSetTimeout(ptrFromHandle_net_PacketConn(conn), int(sec))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_DefaultPermissionHandler
+func turn_DefaultPermissionHandler(arg_0 CGoHandle, arg_1 CGoHandle) C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return boolGoToPy(turn.DefaultPermissionHandler(ptrFromHandle_net_Addr(arg_0), deptrFromHandle_net_IP(arg_1)))
 
 }
 
@@ -3611,6 +3588,29 @@ func turn_NetConnClose(conn CGoHandle) *C.char {
 		return estr
 	}
 	return C.CString("")
+}
+
+//export turn_NetListenPacket
+func turn_NetListenPacket(network *C.char, address *C.char) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	cret, __err := turn.NetListenPacket(C.GoString(network), C.GoString(address))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return handleFromPtr_net_PacketConn(nil)
+	}
+	return handleFromPtr_net_PacketConn(cret)
+}
+
+//export turn_NetConnGetLocalAddr
+func turn_NetConnGetLocalAddr(conn CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return handleFromPtr_net_Addr(turn.NetConnGetLocalAddr(ptrFromHandle_net_PacketConn(conn)))
+
 }
 
 //export turn_NetUDPAddrChangePort
