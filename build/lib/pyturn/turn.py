@@ -726,483 +726,6 @@ class RelayAddressGenerator(go.GoClass):
 
 # ---- Structs ---
 
-# Python type for struct turn.STUNConn
-class STUNConn(go.GoClass):
-	"""STUNConn wraps a net.Conn and implements\nnet.PacketConn by being STUN aware and\npacketizing the stream\n"""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_turn.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_turn.IncRef(self.handle)
-		else:
-			self.handle = _turn.turn_STUNConn_CTor()
-			_turn.IncRef(self.handle)
-	def __del__(self):
-		_turn.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.STUNConn{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.STUNConn ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	def WriteTo(self, p, _):
-		"""WriteTo([]int p, object _) int n, str err
-		
-		WriteTo implements WriteTo from net.PacketConn
-		"""
-		return _turn.turn_STUNConn_WriteTo(self.handle, p.handle, _.handle)
-	def Close(self):
-		"""Close() str
-		
-		Close implements Close from net.PacketConn
-		"""
-		return _turn.turn_STUNConn_Close(self.handle)
-	def LocalAddr(self):
-		"""LocalAddr() object
-		
-		LocalAddr implements LocalAddr from net.PacketConn
-		"""
-		return go.net_Addr(handle=_turn.turn_STUNConn_LocalAddr(self.handle))
-	def SetDeadline(self, t):
-		"""SetDeadline(object t) str
-		
-		SetDeadline implements SetDeadline from net.PacketConn
-		"""
-		return _turn.turn_STUNConn_SetDeadline(self.handle, t.handle)
-	def SetReadDeadline(self, t):
-		"""SetReadDeadline(object t) str
-		
-		SetReadDeadline implements SetReadDeadline from net.PacketConn
-		"""
-		return _turn.turn_STUNConn_SetReadDeadline(self.handle, t.handle)
-	def SetWriteDeadline(self, t):
-		"""SetWriteDeadline(object t) str
-		
-		SetWriteDeadline implements SetWriteDeadline from net.PacketConn
-		"""
-		return _turn.turn_STUNConn_SetWriteDeadline(self.handle, t.handle)
-
-# Python type for struct turn.Server
-class Server(go.GoClass):
-	"""Server is an instance of the Pion TURN Server\n"""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_turn.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_turn.IncRef(self.handle)
-		else:
-			self.handle = _turn.turn_Server_CTor()
-			_turn.IncRef(self.handle)
-	def __del__(self):
-		_turn.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.Server{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.Server ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	def AllocationCount(self):
-		"""AllocationCount() int
-		
-		AllocationCount returns the number of active allocations. It can be used to drain the server before closing
-		"""
-		return _turn.turn_Server_AllocationCount(self.handle)
-	def Close(self):
-		"""Close() str
-		
-		Close stops the TURN Server. It cleans up any associated state and closes all connections it is managing
-		"""
-		return _turn.turn_Server_Close(self.handle)
-
-# Python type for struct turn.ServerConfig
-class ServerConfig(go.GoClass):
-	"""ServerConfig configures the Pion TURN Server\n"""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_turn.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_turn.IncRef(self.handle)
-		else:
-			self.handle = _turn.turn_ServerConfig_CTor()
-			_turn.IncRef(self.handle)
-			if  0 < len(args):
-				self.PacketConnConfigs = args[0]
-			if "PacketConnConfigs" in kwargs:
-				self.PacketConnConfigs = kwargs["PacketConnConfigs"]
-			if  1 < len(args):
-				self.ListenerConfigs = args[1]
-			if "ListenerConfigs" in kwargs:
-				self.ListenerConfigs = kwargs["ListenerConfigs"]
-			if  2 < len(args):
-				self.LoggerFactory = args[2]
-			if "LoggerFactory" in kwargs:
-				self.LoggerFactory = kwargs["LoggerFactory"]
-			if  3 < len(args):
-				self.Realm = args[3]
-			if "Realm" in kwargs:
-				self.Realm = kwargs["Realm"]
-			if  5 < len(args):
-				self.ChannelBindTimeout = args[5]
-			if "ChannelBindTimeout" in kwargs:
-				self.ChannelBindTimeout = kwargs["ChannelBindTimeout"]
-			if  6 < len(args):
-				self.InboundMTU = args[6]
-			if "InboundMTU" in kwargs:
-				self.InboundMTU = kwargs["InboundMTU"]
-	def __del__(self):
-		_turn.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.ServerConfig{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.ServerConfig ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def PacketConnConfigs(self):
-		"""PacketConnConfigs and ListenerConfigs are a list of all the turn listeners
-		Each listener can have custom behavior around the creation of Relays
-		"""
-		return Slice_turn_PacketConnConfig(handle=_turn.turn_ServerConfig_PacketConnConfigs_Get(self.handle))
-	@PacketConnConfigs.setter
-	def PacketConnConfigs(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_ServerConfig_PacketConnConfigs_Set(self.handle, value.handle)
-		else:
-			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
-	@property
-	def ListenerConfigs(self):
-		return Slice_turn_ListenerConfig(handle=_turn.turn_ServerConfig_ListenerConfigs_Get(self.handle))
-	@ListenerConfigs.setter
-	def ListenerConfigs(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_ServerConfig_ListenerConfigs_Set(self.handle, value.handle)
-		else:
-			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
-	@property
-	def LoggerFactory(self):
-		"""LoggerFactory must be set for logging from this server.
-		"""
-		return go.logging_LoggerFactory(handle=_turn.turn_ServerConfig_LoggerFactory_Get(self.handle))
-	@LoggerFactory.setter
-	def LoggerFactory(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_ServerConfig_LoggerFactory_Set(self.handle, value.handle)
-		else:
-			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
-	@property
-	def Realm(self):
-		"""Realm sets the realm for this server
-		"""
-		return _turn.turn_ServerConfig_Realm_Get(self.handle)
-	@Realm.setter
-	def Realm(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_ServerConfig_Realm_Set(self.handle, value.handle)
-		else:
-			_turn.turn_ServerConfig_Realm_Set(self.handle, value)
-	@property
-	def ChannelBindTimeout(self):
-		"""ChannelBindTimeout sets the lifetime of channel binding. Defaults to 10 minutes.
-		"""
-		return _turn.turn_ServerConfig_ChannelBindTimeout_Get(self.handle)
-	@ChannelBindTimeout.setter
-	def ChannelBindTimeout(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_ServerConfig_ChannelBindTimeout_Set(self.handle, value.handle)
-		else:
-			_turn.turn_ServerConfig_ChannelBindTimeout_Set(self.handle, value)
-	@property
-	def InboundMTU(self):
-		"""Sets the server inbound MTU(Maximum transmition unit). Defaults to 1600 bytes.
-		"""
-		return _turn.turn_ServerConfig_InboundMTU_Get(self.handle)
-	@InboundMTU.setter
-	def InboundMTU(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_ServerConfig_InboundMTU_Set(self.handle, value.handle)
-		else:
-			_turn.turn_ServerConfig_InboundMTU_Set(self.handle, value)
-
-# Python type for struct turn.Client
-class Client(go.GoClass):
-	"""Client is a STUN server client\n"""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_turn.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_turn.IncRef(self.handle)
-		else:
-			self.handle = _turn.turn_Client_CTor()
-			_turn.IncRef(self.handle)
-	def __del__(self):
-		_turn.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.Client{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.Client ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	def TURNServerAddr(self):
-		"""TURNServerAddr() object
-		
-		TURNServerAddr return the TURN server address
-		"""
-		return go.net_Addr(handle=_turn.turn_Client_TURNServerAddr(self.handle))
-	def STUNServerAddr(self):
-		"""STUNServerAddr() object
-		
-		STUNServerAddr return the STUN server address
-		"""
-		return go.net_Addr(handle=_turn.turn_Client_STUNServerAddr(self.handle))
-	def Username(self):
-		"""Username() []int
-		
-		Username returns username
-		"""
-		return go.stun_Username(handle=_turn.turn_Client_Username(self.handle))
-	def Realm(self):
-		"""Realm() []int
-		
-		Realm return realm
-		"""
-		return go.stun_Realm(handle=_turn.turn_Client_Realm(self.handle))
-	def WriteTo(self, data, to):
-		"""WriteTo([]int data, object to) int, str
-		
-		WriteTo sends data to the specified destination using the base socket.
-		"""
-		return _turn.turn_Client_WriteTo(self.handle, data.handle, to.handle)
-	def Listen(self):
-		"""Listen() str
-		
-		Listen will have this client start listening on the conn provided via the config.
-		This is optional. If not used, you will need to call HandleInbound method
-		to supply incoming data, instead.
-		"""
-		return _turn.turn_Client_Listen(self.handle)
-	def Close(self, goRun=False):
-		"""Close() 
-		
-		Close closes this client
-		"""
-		_turn.turn_Client_Close(self.handle, goRun)
-	def SendBindingRequestTo(self, to):
-		"""SendBindingRequestTo(object to) object, str
-		
-		SendBindingRequestTo sends a new STUN request to the given transport address
-		"""
-		return go.net_Addr(handle=_turn.turn_Client_SendBindingRequestTo(self.handle, to.handle))
-	def SendBindingRequest(self):
-		"""SendBindingRequest() object, str
-		
-		SendBindingRequest sends a new STUN request to the STUN server
-		"""
-		return go.net_Addr(handle=_turn.turn_Client_SendBindingRequest(self.handle))
-	def Allocate(self):
-		"""Allocate() object, str
-		
-		Allocate sends a TURN allocation request to the given transport address
-		"""
-		return go.net_PacketConn(handle=_turn.turn_Client_Allocate(self.handle))
-	def AllocateTCP(self):
-		"""AllocateTCP() object, str
-		
-		AllocateTCP creates a new TCP allocation at the TURN server.
-		"""
-		return go.Ptr_client_TCPAllocation(handle=_turn.turn_Client_AllocateTCP(self.handle))
-	def CreatePermission(self, *args):
-		"""CreatePermission([]object addrs) str
-		
-		CreatePermission Issues a CreatePermission request for the supplied addresses
-		as described in https://datatracker.ietf.org/doc/html/rfc5766#section-9
-		"""
-		addrs = Slice_net_Addr(args)
-		return _turn.turn_Client_CreatePermission(self.handle, addrs.handle)
-	def PerformTransaction(self, msg, to, ignoreResult):
-		"""PerformTransaction(object msg, object to, bool ignoreResult) object, str
-		
-		PerformTransaction performs STUN transaction
-		"""
-		return go.client_TransactionResult(handle=_turn.turn_Client_PerformTransaction(self.handle, msg.handle, to.handle, ignoreResult))
-	def OnDeallocated(self, arg_0, goRun=False):
-		"""OnDeallocated(object) 
-		
-		OnDeallocated is called when de-allocation of relay address has been complete.
-		(Called by UDPConn)
-		"""
-		_turn.turn_Client_OnDeallocated(self.handle, arg_0.handle, goRun)
-	def HandleInbound(self, data, myfrom):
-		"""HandleInbound([]int data, object from) bool, str
-		
-		HandleInbound handles data received.
-		This method handles incoming packet de-multiplex it by the source address
-		and the types of the message.
-		This return a boolean (handled or not) and if there was an error.
-		Caller should check if the packet was handled by this client or not.
-		If not handled, it is assumed that the packet is application data.
-		If an error is returned, the caller should discard the packet regardless.
-		"""
-		return _turn.turn_Client_HandleInbound(self.handle, data.handle, myfrom.handle)
-
-# Python type for struct turn.RelayAddressGeneratorNone
-class RelayAddressGeneratorNone(go.GoClass):
-	"""RelayAddressGeneratorNone returns the listener with no modifications\n"""
-	def __init__(self, *args, **kwargs):
-		"""
-		handle=A Go-side object is always initialized with an explicit handle=arg
-		otherwise parameters can be unnamed in order of field names or named fields
-		in which case a new Go object is constructed first
-		"""
-		if len(kwargs) == 1 and 'handle' in kwargs:
-			self.handle = kwargs['handle']
-			_turn.IncRef(self.handle)
-		elif len(args) == 1 and isinstance(args[0], go.GoClass):
-			self.handle = args[0].handle
-			_turn.IncRef(self.handle)
-		else:
-			self.handle = _turn.turn_RelayAddressGeneratorNone_CTor()
-			_turn.IncRef(self.handle)
-			if  0 < len(args):
-				self.Address = args[0]
-			if "Address" in kwargs:
-				self.Address = kwargs["Address"]
-			if  1 < len(args):
-				self.Net = args[1]
-			if "Net" in kwargs:
-				self.Net = kwargs["Net"]
-	def __del__(self):
-		_turn.DecRef(self.handle)
-	def __str__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.RelayAddressGeneratorNone{'
-		first = True
-		for v in pr:
-			if callable(v[1]):
-				continue
-			if first:
-				first = False
-			else:
-				sv += ', '
-			sv += v[0] + '=' + str(v[1])
-		return sv + '}'
-	def __repr__(self):
-		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
-		sv = 'turn.RelayAddressGeneratorNone ( '
-		for v in pr:
-			if not callable(v[1]):
-				sv += v[0] + '=' + str(v[1]) + ', '
-		return sv + ')'
-	@property
-	def Address(self):
-		"""Address is passed to Listen/ListenPacket when creating the Relay
-		"""
-		return _turn.turn_RelayAddressGeneratorNone_Address_Get(self.handle)
-	@Address.setter
-	def Address(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_RelayAddressGeneratorNone_Address_Set(self.handle, value.handle)
-		else:
-			_turn.turn_RelayAddressGeneratorNone_Address_Set(self.handle, value)
-	@property
-	def Net(self):
-		return go.transport_Net(handle=_turn.turn_RelayAddressGeneratorNone_Net_Get(self.handle))
-	@Net.setter
-	def Net(self, value):
-		if isinstance(value, go.GoClass):
-			_turn.turn_RelayAddressGeneratorNone_Net_Set(self.handle, value.handle)
-		else:
-			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
-	def Validate(self):
-		"""Validate() str
-		
-		Validate is called on server startup and confirms the RelayAddressGenerator is properly configured
-		"""
-		return _turn.turn_RelayAddressGeneratorNone_Validate(self.handle)
-
 # Python type for struct turn.PacketConnConfig
 class PacketConnConfig(go.GoClass):
 	"""PacketConnConfig is a single net.PacketConn to listen/write on. This will be used for UDP listeners\n"""
@@ -1580,6 +1103,136 @@ class RelayAddressGeneratorStatic(go.GoClass):
 		"""
 		return _turn.turn_RelayAddressGeneratorStatic_Validate(self.handle)
 
+# Python type for struct turn.ServerConfig
+class ServerConfig(go.GoClass):
+	"""ServerConfig configures the Pion TURN Server\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_turn.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_turn.IncRef(self.handle)
+		else:
+			self.handle = _turn.turn_ServerConfig_CTor()
+			_turn.IncRef(self.handle)
+			if  0 < len(args):
+				self.PacketConnConfigs = args[0]
+			if "PacketConnConfigs" in kwargs:
+				self.PacketConnConfigs = kwargs["PacketConnConfigs"]
+			if  1 < len(args):
+				self.ListenerConfigs = args[1]
+			if "ListenerConfigs" in kwargs:
+				self.ListenerConfigs = kwargs["ListenerConfigs"]
+			if  2 < len(args):
+				self.LoggerFactory = args[2]
+			if "LoggerFactory" in kwargs:
+				self.LoggerFactory = kwargs["LoggerFactory"]
+			if  3 < len(args):
+				self.Realm = args[3]
+			if "Realm" in kwargs:
+				self.Realm = kwargs["Realm"]
+			if  5 < len(args):
+				self.ChannelBindTimeout = args[5]
+			if "ChannelBindTimeout" in kwargs:
+				self.ChannelBindTimeout = kwargs["ChannelBindTimeout"]
+			if  6 < len(args):
+				self.InboundMTU = args[6]
+			if "InboundMTU" in kwargs:
+				self.InboundMTU = kwargs["InboundMTU"]
+	def __del__(self):
+		_turn.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.ServerConfig{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.ServerConfig ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def PacketConnConfigs(self):
+		"""PacketConnConfigs and ListenerConfigs are a list of all the turn listeners
+		Each listener can have custom behavior around the creation of Relays
+		"""
+		return Slice_turn_PacketConnConfig(handle=_turn.turn_ServerConfig_PacketConnConfigs_Get(self.handle))
+	@PacketConnConfigs.setter
+	def PacketConnConfigs(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_ServerConfig_PacketConnConfigs_Set(self.handle, value.handle)
+		else:
+			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+	@property
+	def ListenerConfigs(self):
+		return Slice_turn_ListenerConfig(handle=_turn.turn_ServerConfig_ListenerConfigs_Get(self.handle))
+	@ListenerConfigs.setter
+	def ListenerConfigs(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_ServerConfig_ListenerConfigs_Set(self.handle, value.handle)
+		else:
+			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+	@property
+	def LoggerFactory(self):
+		"""LoggerFactory must be set for logging from this server.
+		"""
+		return go.logging_LoggerFactory(handle=_turn.turn_ServerConfig_LoggerFactory_Get(self.handle))
+	@LoggerFactory.setter
+	def LoggerFactory(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_ServerConfig_LoggerFactory_Set(self.handle, value.handle)
+		else:
+			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+	@property
+	def Realm(self):
+		"""Realm sets the realm for this server
+		"""
+		return _turn.turn_ServerConfig_Realm_Get(self.handle)
+	@Realm.setter
+	def Realm(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_ServerConfig_Realm_Set(self.handle, value.handle)
+		else:
+			_turn.turn_ServerConfig_Realm_Set(self.handle, value)
+	@property
+	def ChannelBindTimeout(self):
+		"""ChannelBindTimeout sets the lifetime of channel binding. Defaults to 10 minutes.
+		"""
+		return _turn.turn_ServerConfig_ChannelBindTimeout_Get(self.handle)
+	@ChannelBindTimeout.setter
+	def ChannelBindTimeout(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_ServerConfig_ChannelBindTimeout_Set(self.handle, value.handle)
+		else:
+			_turn.turn_ServerConfig_ChannelBindTimeout_Set(self.handle, value)
+	@property
+	def InboundMTU(self):
+		"""Sets the server inbound MTU(Maximum transmition unit). Defaults to 1600 bytes.
+		"""
+		return _turn.turn_ServerConfig_InboundMTU_Get(self.handle)
+	@InboundMTU.setter
+	def InboundMTU(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_ServerConfig_InboundMTU_Set(self.handle, value.handle)
+		else:
+			_turn.turn_ServerConfig_InboundMTU_Set(self.handle, value)
+
 # Python type for struct turn.ClientConfig
 class ClientConfig(go.GoClass):
 	"""ClientConfig is a bag of config parameters for Client.\n"""
@@ -1821,6 +1474,353 @@ class ListenerConfig(go.GoClass):
 		else:
 			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
 
+# Python type for struct turn.RelayAddressGeneratorNone
+class RelayAddressGeneratorNone(go.GoClass):
+	"""RelayAddressGeneratorNone returns the listener with no modifications\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_turn.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_turn.IncRef(self.handle)
+		else:
+			self.handle = _turn.turn_RelayAddressGeneratorNone_CTor()
+			_turn.IncRef(self.handle)
+			if  0 < len(args):
+				self.Address = args[0]
+			if "Address" in kwargs:
+				self.Address = kwargs["Address"]
+			if  1 < len(args):
+				self.Net = args[1]
+			if "Net" in kwargs:
+				self.Net = kwargs["Net"]
+	def __del__(self):
+		_turn.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.RelayAddressGeneratorNone{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.RelayAddressGeneratorNone ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	@property
+	def Address(self):
+		"""Address is passed to Listen/ListenPacket when creating the Relay
+		"""
+		return _turn.turn_RelayAddressGeneratorNone_Address_Get(self.handle)
+	@Address.setter
+	def Address(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_RelayAddressGeneratorNone_Address_Set(self.handle, value.handle)
+		else:
+			_turn.turn_RelayAddressGeneratorNone_Address_Set(self.handle, value)
+	@property
+	def Net(self):
+		return go.transport_Net(handle=_turn.turn_RelayAddressGeneratorNone_Net_Get(self.handle))
+	@Net.setter
+	def Net(self, value):
+		if isinstance(value, go.GoClass):
+			_turn.turn_RelayAddressGeneratorNone_Net_Set(self.handle, value.handle)
+		else:
+			raise TypeError("supplied argument type {t} is not a go.GoClass".format(t=type(value)))
+	def Validate(self):
+		"""Validate() str
+		
+		Validate is called on server startup and confirms the RelayAddressGenerator is properly configured
+		"""
+		return _turn.turn_RelayAddressGeneratorNone_Validate(self.handle)
+
+# Python type for struct turn.STUNConn
+class STUNConn(go.GoClass):
+	"""STUNConn wraps a net.Conn and implements\nnet.PacketConn by being STUN aware and\npacketizing the stream\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_turn.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_turn.IncRef(self.handle)
+		else:
+			self.handle = _turn.turn_STUNConn_CTor()
+			_turn.IncRef(self.handle)
+	def __del__(self):
+		_turn.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.STUNConn{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.STUNConn ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	def WriteTo(self, p, _):
+		"""WriteTo([]int p, object _) int n, str err
+		
+		WriteTo implements WriteTo from net.PacketConn
+		"""
+		return _turn.turn_STUNConn_WriteTo(self.handle, p.handle, _.handle)
+	def Close(self):
+		"""Close() str
+		
+		Close implements Close from net.PacketConn
+		"""
+		return _turn.turn_STUNConn_Close(self.handle)
+	def LocalAddr(self):
+		"""LocalAddr() object
+		
+		LocalAddr implements LocalAddr from net.PacketConn
+		"""
+		return go.net_Addr(handle=_turn.turn_STUNConn_LocalAddr(self.handle))
+	def SetDeadline(self, t):
+		"""SetDeadline(object t) str
+		
+		SetDeadline implements SetDeadline from net.PacketConn
+		"""
+		return _turn.turn_STUNConn_SetDeadline(self.handle, t.handle)
+	def SetReadDeadline(self, t):
+		"""SetReadDeadline(object t) str
+		
+		SetReadDeadline implements SetReadDeadline from net.PacketConn
+		"""
+		return _turn.turn_STUNConn_SetReadDeadline(self.handle, t.handle)
+	def SetWriteDeadline(self, t):
+		"""SetWriteDeadline(object t) str
+		
+		SetWriteDeadline implements SetWriteDeadline from net.PacketConn
+		"""
+		return _turn.turn_STUNConn_SetWriteDeadline(self.handle, t.handle)
+
+# Python type for struct turn.Server
+class Server(go.GoClass):
+	"""Server is an instance of the Pion TURN Server\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_turn.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_turn.IncRef(self.handle)
+		else:
+			self.handle = _turn.turn_Server_CTor()
+			_turn.IncRef(self.handle)
+	def __del__(self):
+		_turn.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.Server{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.Server ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	def AllocationCount(self):
+		"""AllocationCount() int
+		
+		AllocationCount returns the number of active allocations. It can be used to drain the server before closing
+		"""
+		return _turn.turn_Server_AllocationCount(self.handle)
+	def Close(self):
+		"""Close() str
+		
+		Close stops the TURN Server. It cleans up any associated state and closes all connections it is managing
+		"""
+		return _turn.turn_Server_Close(self.handle)
+
+# Python type for struct turn.Client
+class Client(go.GoClass):
+	"""Client is a STUN server client\n"""
+	def __init__(self, *args, **kwargs):
+		"""
+		handle=A Go-side object is always initialized with an explicit handle=arg
+		otherwise parameters can be unnamed in order of field names or named fields
+		in which case a new Go object is constructed first
+		"""
+		if len(kwargs) == 1 and 'handle' in kwargs:
+			self.handle = kwargs['handle']
+			_turn.IncRef(self.handle)
+		elif len(args) == 1 and isinstance(args[0], go.GoClass):
+			self.handle = args[0].handle
+			_turn.IncRef(self.handle)
+		else:
+			self.handle = _turn.turn_Client_CTor()
+			_turn.IncRef(self.handle)
+	def __del__(self):
+		_turn.DecRef(self.handle)
+	def __str__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.Client{'
+		first = True
+		for v in pr:
+			if callable(v[1]):
+				continue
+			if first:
+				first = False
+			else:
+				sv += ', '
+			sv += v[0] + '=' + str(v[1])
+		return sv + '}'
+	def __repr__(self):
+		pr = [(p, getattr(self, p)) for p in dir(self) if not p.startswith('__')]
+		sv = 'turn.Client ( '
+		for v in pr:
+			if not callable(v[1]):
+				sv += v[0] + '=' + str(v[1]) + ', '
+		return sv + ')'
+	def TURNServerAddr(self):
+		"""TURNServerAddr() object
+		
+		TURNServerAddr return the TURN server address
+		"""
+		return go.net_Addr(handle=_turn.turn_Client_TURNServerAddr(self.handle))
+	def STUNServerAddr(self):
+		"""STUNServerAddr() object
+		
+		STUNServerAddr return the STUN server address
+		"""
+		return go.net_Addr(handle=_turn.turn_Client_STUNServerAddr(self.handle))
+	def Username(self):
+		"""Username() []int
+		
+		Username returns username
+		"""
+		return go.stun_Username(handle=_turn.turn_Client_Username(self.handle))
+	def Realm(self):
+		"""Realm() []int
+		
+		Realm return realm
+		"""
+		return go.stun_Realm(handle=_turn.turn_Client_Realm(self.handle))
+	def WriteTo(self, data, to):
+		"""WriteTo([]int data, object to) int, str
+		
+		WriteTo sends data to the specified destination using the base socket.
+		"""
+		return _turn.turn_Client_WriteTo(self.handle, data.handle, to.handle)
+	def Listen(self):
+		"""Listen() str
+		
+		Listen will have this client start listening on the conn provided via the config.
+		This is optional. If not used, you will need to call HandleInbound method
+		to supply incoming data, instead.
+		"""
+		return _turn.turn_Client_Listen(self.handle)
+	def Close(self, goRun=False):
+		"""Close() 
+		
+		Close closes this client
+		"""
+		_turn.turn_Client_Close(self.handle, goRun)
+	def SendBindingRequestTo(self, to):
+		"""SendBindingRequestTo(object to) object, str
+		
+		SendBindingRequestTo sends a new STUN request to the given transport address
+		"""
+		return go.net_Addr(handle=_turn.turn_Client_SendBindingRequestTo(self.handle, to.handle))
+	def SendBindingRequest(self):
+		"""SendBindingRequest() object, str
+		
+		SendBindingRequest sends a new STUN request to the STUN server
+		"""
+		return go.net_Addr(handle=_turn.turn_Client_SendBindingRequest(self.handle))
+	def Allocate(self):
+		"""Allocate() object, str
+		
+		Allocate sends a TURN allocation request to the given transport address
+		"""
+		return go.net_PacketConn(handle=_turn.turn_Client_Allocate(self.handle))
+	def AllocateTCP(self):
+		"""AllocateTCP() object, str
+		
+		AllocateTCP creates a new TCP allocation at the TURN server.
+		"""
+		return go.Ptr_client_TCPAllocation(handle=_turn.turn_Client_AllocateTCP(self.handle))
+	def CreatePermission(self, *args):
+		"""CreatePermission([]object addrs) str
+		
+		CreatePermission Issues a CreatePermission request for the supplied addresses
+		as described in https://datatracker.ietf.org/doc/html/rfc5766#section-9
+		"""
+		addrs = Slice_net_Addr(args)
+		return _turn.turn_Client_CreatePermission(self.handle, addrs.handle)
+	def PerformTransaction(self, msg, to, ignoreResult):
+		"""PerformTransaction(object msg, object to, bool ignoreResult) object, str
+		
+		PerformTransaction performs STUN transaction
+		"""
+		return go.client_TransactionResult(handle=_turn.turn_Client_PerformTransaction(self.handle, msg.handle, to.handle, ignoreResult))
+	def OnDeallocated(self, arg_0, goRun=False):
+		"""OnDeallocated(object) 
+		
+		OnDeallocated is called when de-allocation of relay address has been complete.
+		(Called by UDPConn)
+		"""
+		_turn.turn_Client_OnDeallocated(self.handle, arg_0.handle, goRun)
+	def HandleInbound(self, data, myfrom):
+		"""HandleInbound([]int data, object from) bool, str
+		
+		HandleInbound handles data received.
+		This method handles incoming packet de-multiplex it by the source address
+		and the types of the message.
+		This return a boolean (handled or not) and if there was an error.
+		Caller should check if the packet was handled by this client or not.
+		If not handled, it is assumed that the packet is application data.
+		If an error is returned, the caller should discard the packet regardless.
+		"""
+		return _turn.turn_Client_HandleInbound(self.handle, data.handle, myfrom.handle)
+
 
 # ---- Slices ---
 
@@ -1829,6 +1829,9 @@ class ListenerConfig(go.GoClass):
 
 
 # ---- Constructors ---
+def NetConnReadFrom(conn, p):
+	"""NetConnReadFrom(object conn, []int p) object, str"""
+	return RecievedPacket(handle=_turn.turn_NetConnReadFrom(conn.handle, p.handle))
 def NewSTUNConn(nextConn):
 	"""NewSTUNConn(object nextConn) object
 	
@@ -1847,47 +1850,44 @@ def NewClient(config):
 	NewClient returns a new Client instance. listeningAddress is the address and port to listen on, default "0.0.0.0:0"
 	"""
 	return Client(handle=_turn.turn_NewClient(config.handle))
-def NetConnReadFrom(conn, p):
-	"""NetConnReadFrom(object conn, []int p) object, str"""
-	return RecievedPacket(handle=_turn.turn_NetConnReadFrom(conn.handle, p.handle))
 
 
 # ---- Functions ---
-def NetConnWriteTo(conn, p, addr):
-	"""NetConnWriteTo(object conn, []int p, object addr) int, str"""
-	return _turn.turn_NetConnWriteTo(conn.handle, p.handle, addr.handle)
-def NetConnClose(conn):
-	"""NetConnClose(object conn) str"""
-	return _turn.turn_NetConnClose(conn.handle)
-def NetConnGetLocalAddr(conn):
-	"""NetConnGetLocalAddr(object conn) object"""
-	return go.net_Addr(handle=_turn.turn_NetConnGetLocalAddr(conn.handle))
 def DefaultPermissionHandler(arg_0, arg_1):
 	"""DefaultPermissionHandler(object, []int) bool ok
 	
 	DefaultPermissionHandler is convince function that grants permission to all peers
 	"""
 	return _turn.turn_DefaultPermissionHandler(arg_0.handle, arg_1.handle)
-def NetAddrString(addr):
-	"""NetAddrString(object addr) str"""
-	return _turn.turn_NetAddrString(addr.handle)
-def NetListenPacket(network, address):
-	"""NetListenPacket(str network, str address) object, str"""
-	return go.net_PacketConn(handle=_turn.turn_NetListenPacket(network, address))
+def NetConnGetLocalAddr(conn):
+	"""NetConnGetLocalAddr(object conn) object"""
+	return go.net_Addr(handle=_turn.turn_NetConnGetLocalAddr(conn.handle))
+def NetConnWriteTo(conn, p, addr):
+	"""NetConnWriteTo(object conn, []int p, object addr) int, str"""
+	return _turn.turn_NetConnWriteTo(conn.handle, p.handle, addr.handle)
 def NetResolveUDPAddr(network, address):
 	"""NetResolveUDPAddr(str network, str address) object, str"""
 	return go.net_UDPAddr(handle=_turn.turn_NetResolveUDPAddr(network, address))
+def NetConnSetTimeout(conn, sec):
+	"""NetConnSetTimeout(object conn, int sec) str"""
+	return _turn.turn_NetConnSetTimeout(conn.handle, sec)
 def GenerateAuthKey(username, realm, password):
 	"""GenerateAuthKey(str username, str realm, str password) []int
 	
 	GenerateAuthKey is a convenience function to easily generate keys in the format used by AuthHandler
 	"""
 	return go.Slice_byte(handle=_turn.turn_GenerateAuthKey(username, realm, password))
+def NetAddrString(addr):
+	"""NetAddrString(object addr) str"""
+	return _turn.turn_NetAddrString(addr.handle)
+def NetConnClose(conn):
+	"""NetConnClose(object conn) str"""
+	return _turn.turn_NetConnClose(conn.handle)
+def NetListenPacket(network, address):
+	"""NetListenPacket(str network, str address) object, str"""
+	return go.net_PacketConn(handle=_turn.turn_NetListenPacket(network, address))
 def NetUDPAddrChangePort(addr, port):
 	"""NetUDPAddrChangePort(object addr, int port) str"""
 	return _turn.turn_NetUDPAddrChangePort(addr.handle, port)
-def NetConnSetTimeout(conn, sec):
-	"""NetConnSetTimeout(object conn, int sec) str"""
-	return _turn.turn_NetConnSetTimeout(conn.handle, sec)
 
 

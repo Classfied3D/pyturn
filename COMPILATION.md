@@ -20,6 +20,8 @@
 ## 4. Build
 * `cd` into the `turn` directory
 * `gopy build --output=pyturn -vm=python3 .`
+  * <details><summary><b>Compiling for macos 12.0+ x86-64</b></summary><code>GOARCH=amd64 GOOS=darwin CGO_LDFLAGS="-O2 -g -mmacosx-version-min=12.0" GOGCCFLAGS="-fPIC -arch x86_64 -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fmessage-length=0 -gno-record-gcc-switches -fno-common -mmacosx-version-min=12.0" gopy build --output=pyturn -vm=python3 .</code></details>
+  * <details><summary><b>Compiling for macos 12.0+ arm64</b></summary><code>GOARCH=arm64 CGO_LDFLAGS="-O2 -g -mmacosx-version-min=12.0" GOGCCFLAGS="-fPIC -arch arm64 -m64 -pthread -fno-caret-diagnostics -Qunused-arguments -fno-common -gno-record-gcc-switches -mmacosx-version-min=12.0" gopy build --output=pyturn -vm=python3 .</code></details>
 * For me, the code produced had an error, where a parameter was named _, if this happens, follow these steps
   * Go to the file and line number which the error mentions in the `turn/pyturn` directory
   * This code references a variable with the name `_`, change this to `q` (or anything you want)

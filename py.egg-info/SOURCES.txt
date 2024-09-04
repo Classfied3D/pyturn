@@ -10,4 +10,3 @@ pyturn/_turn.cpython-311-darwin.so
 pyturn/build.py
 pyturn/go.py
 pyturn/turn.py
-pyturn/turn_go.so
