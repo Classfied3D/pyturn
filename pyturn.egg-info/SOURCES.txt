@@ -2,7 +2,7 @@ LICENSE
 README.md
 setup.py
 pyturn/__init__.py
-pyturn/_turn.cpython-311-darwin.so
+pyturn/_turn.cpython-312-darwin.so
 pyturn/build.py
 pyturn/go.py
 pyturn/turn.py

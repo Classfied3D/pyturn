@@ -3476,476 +3476,6 @@ PyObject * _wrap__turn_turn_RelayAddressGenerator_Validate(PyObject * PYBINDGEN_
 
 
 PyObject *
-_wrap__turn_turn_ClientConfig_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
-{
-    PyObject *py_retval;
-    int64_t retval;
-
-    retval = turn_ClientConfig_CTor();
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_STUNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_STUNServerAddr_Get(handle);
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_STUNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_STUNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    char *val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_STUNServerAddr_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_STUNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_TURNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_TURNServerAddr_Get(handle);
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_TURNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_TURNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    char *val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_TURNServerAddr_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_TURNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Username_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_Username_Get(handle);
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Username_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Username_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    char *val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_Username_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Username_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Password_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_Password_Get(handle);
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Password_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Password_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    char *val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_Password_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Password_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Realm_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_Realm_Get(handle);
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Realm_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Realm_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    char *val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_Realm_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Realm_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Software_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_Software_Get(handle);
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Software_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Software_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    char *val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_Software_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Software_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_RTO_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_RTO_Get(handle);
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_RTO_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_RTO_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    int64_t val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_RTO_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_RTO_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Conn_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_Conn_Get(handle);
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Conn_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Conn_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    int64_t val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_Conn_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Conn_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Net_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_Net_Get(handle);
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Net_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_Net_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    int64_t val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_Net_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_Net_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_LoggerFactory_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_ClientConfig_LoggerFactory_Get(handle);
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_LoggerFactory_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_ClientConfig_LoggerFactory_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    int64_t val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_ClientConfig_LoggerFactory_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_ClientConfig_LoggerFactory_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_RecievedPacket_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
-{
-    PyObject *py_retval;
-    int64_t retval;
-
-    retval = turn_RecievedPacket_CTor();
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_RecievedPacket_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
-
-
-PyObject *
-_wrap__turn_turn_RecievedPacket_N_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_RecievedPacket_N_Get(handle);
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_RecievedPacket_N_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_RecievedPacket_N_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    int64_t val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_RecievedPacket_N_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_RecievedPacket_N_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_RecievedPacket_Addr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t handle;
-    const char *keywords[] = {"handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
-        return NULL;
-    }
-    retval = turn_RecievedPacket_Addr_Get(handle);
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_RecievedPacket_Addr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_RecievedPacket_Addr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t handle;
-    int64_t val;
-    const char *keywords[] = {"handle", "val", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
-        return NULL;
-    }
-    turn_RecievedPacket_Addr_Set(handle, val);
-    Py_INCREF(Py_None);
-    py_retval = Py_None;
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_RecievedPacket_Addr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
 _wrap__turn_turn_RelayAddressGeneratorNone_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
 {
     PyObject *py_retval;
@@ -4054,41 +3584,43 @@ PyObject * _wrap__turn_turn_RelayAddressGeneratorNone_Validate(PyObject * PYBIND
 
 
 PyObject *
-_wrap__turn_turn_Server_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
+_wrap__turn_turn_STUNConn_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
 {
     PyObject *py_retval;
     int64_t retval;
 
-    retval = turn_Server_CTor();
+    retval = turn_STUNConn_CTor();
     py_retval = Py_BuildValue((char *) "L", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_Server_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
+PyObject * _wrap__turn_turn_STUNConn_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
 
 
 PyObject *
-_wrap__turn_turn_Server_AllocationCount(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+_wrap__turn_turn_STUNConn_WriteTo(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
     int64_t retval;
     int64_t _handle;
-    const char *keywords[] = {"_handle", NULL};
+    int64_t p;
+    int64_t _;
+    const char *keywords[] = {"_handle", "p", "_", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &_handle)) {
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LLL", (char **) keywords, &_handle, &p, &_)) {
         return NULL;
     }
-    retval = turn_Server_AllocationCount(_handle);
+    retval = turn_STUNConn_WriteTo(_handle, p, _);
     if (PyErr_Occurred()) {
         return NULL;
     }
     py_retval = Py_BuildValue((char *) "L", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_Server_AllocationCount(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+PyObject * _wrap__turn_turn_STUNConn_WriteTo(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 
 PyObject *
-_wrap__turn_turn_Server_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+_wrap__turn_turn_STUNConn_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
     char *retval;
@@ -4098,14 +3630,101 @@ _wrap__turn_turn_Server_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args
     if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &_handle)) {
         return NULL;
     }
-    retval = turn_Server_Close(_handle);
+    retval = turn_STUNConn_Close(_handle);
     if (PyErr_Occurred()) {
         return NULL;
     }
     py_retval = Py_BuildValue((char *) "s", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_Server_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+PyObject * _wrap__turn_turn_STUNConn_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_STUNConn_LocalAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t _handle;
+    const char *keywords[] = {"_handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &_handle)) {
+        return NULL;
+    }
+    retval = turn_STUNConn_LocalAddr(_handle);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_STUNConn_LocalAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_STUNConn_SetDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t _handle;
+    int64_t t;
+    const char *keywords[] = {"_handle", "t", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &_handle, &t)) {
+        return NULL;
+    }
+    retval = turn_STUNConn_SetDeadline(_handle, t);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_STUNConn_SetDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_STUNConn_SetReadDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t _handle;
+    int64_t t;
+    const char *keywords[] = {"_handle", "t", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &_handle, &t)) {
+        return NULL;
+    }
+    retval = turn_STUNConn_SetReadDeadline(_handle, t);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_STUNConn_SetReadDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_STUNConn_SetWriteDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t _handle;
+    int64_t t;
+    const char *keywords[] = {"_handle", "t", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &_handle, &t)) {
+        return NULL;
+    }
+    retval = turn_STUNConn_SetWriteDeadline(_handle, t);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_STUNConn_SetWriteDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 
 PyObject *
@@ -4864,6 +4483,93 @@ PyObject * _wrap__turn_turn_PacketConnConfig_RelayAddressGenerator_Set(PyObject 
 
 
 PyObject *
+_wrap__turn_turn_RecievedPacket_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
+{
+    PyObject *py_retval;
+    int64_t retval;
+
+    retval = turn_RecievedPacket_CTor();
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_RecievedPacket_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
+
+
+PyObject *
+_wrap__turn_turn_RecievedPacket_N_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_RecievedPacket_N_Get(handle);
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_RecievedPacket_N_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_RecievedPacket_N_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    int64_t val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_RecievedPacket_N_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_RecievedPacket_N_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_RecievedPacket_Addr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_RecievedPacket_Addr_Get(handle);
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_RecievedPacket_Addr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_RecievedPacket_Addr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    int64_t val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_RecievedPacket_Addr_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_RecievedPacket_Addr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
 _wrap__turn_turn_RelayAddressGeneratorPortRange_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
 {
     PyObject *py_retval;
@@ -5310,64 +5016,20 @@ PyObject * _wrap__turn_turn_RelayAddressGeneratorStatic_Validate(PyObject * PYBI
 
 
 PyObject *
-_wrap__turn_turn_STUNConn_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
+_wrap__turn_turn_Server_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
 {
     PyObject *py_retval;
     int64_t retval;
 
-    retval = turn_STUNConn_CTor();
+    retval = turn_Server_CTor();
     py_retval = Py_BuildValue((char *) "L", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_STUNConn_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
+PyObject * _wrap__turn_turn_Server_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
 
 
 PyObject *
-_wrap__turn_turn_STUNConn_WriteTo(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t _handle;
-    int64_t p;
-    int64_t _;
-    const char *keywords[] = {"_handle", "p", "_", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LLL", (char **) keywords, &_handle, &p, &_)) {
-        return NULL;
-    }
-    retval = turn_STUNConn_WriteTo(_handle, p, _);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_STUNConn_WriteTo(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_STUNConn_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t _handle;
-    const char *keywords[] = {"_handle", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &_handle)) {
-        return NULL;
-    }
-    retval = turn_STUNConn_Close(_handle);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_STUNConn_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_STUNConn_LocalAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+_wrap__turn_turn_Server_AllocationCount(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
     int64_t retval;
@@ -5377,80 +5039,460 @@ _wrap__turn_turn_STUNConn_LocalAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject
     if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &_handle)) {
         return NULL;
     }
-    retval = turn_STUNConn_LocalAddr(_handle);
+    retval = turn_Server_AllocationCount(_handle);
     if (PyErr_Occurred()) {
         return NULL;
     }
     py_retval = Py_BuildValue((char *) "L", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_STUNConn_LocalAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+PyObject * _wrap__turn_turn_Server_AllocationCount(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 
 PyObject *
-_wrap__turn_turn_STUNConn_SetDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+_wrap__turn_turn_Server_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
     char *retval;
     int64_t _handle;
-    int64_t t;
-    const char *keywords[] = {"_handle", "t", NULL};
+    const char *keywords[] = {"_handle", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &_handle, &t)) {
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &_handle)) {
         return NULL;
     }
-    retval = turn_STUNConn_SetDeadline(_handle, t);
+    retval = turn_Server_Close(_handle);
     if (PyErr_Occurred()) {
         return NULL;
     }
     py_retval = Py_BuildValue((char *) "s", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_STUNConn_SetDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+PyObject * _wrap__turn_turn_Server_Close(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 
 PyObject *
-_wrap__turn_turn_STUNConn_SetReadDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+_wrap__turn_turn_ClientConfig_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs))
 {
     PyObject *py_retval;
-    char *retval;
-    int64_t _handle;
-    int64_t t;
-    const char *keywords[] = {"_handle", "t", NULL};
+    int64_t retval;
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &_handle, &t)) {
-        return NULL;
-    }
-    retval = turn_STUNConn_SetReadDeadline(_handle, t);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "s", retval);
+    retval = turn_ClientConfig_CTor();
+    py_retval = Py_BuildValue((char *) "L", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_STUNConn_SetReadDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+PyObject * _wrap__turn_turn_ClientConfig_CTor(PyObject *PYBINDGEN_UNUSED(_args), PyObject *PYBINDGEN_UNUSED(_kwargs));
 
 
 PyObject *
-_wrap__turn_turn_STUNConn_SetWriteDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+_wrap__turn_turn_ClientConfig_STUNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
     char *retval;
-    int64_t _handle;
-    int64_t t;
-    const char *keywords[] = {"_handle", "t", NULL};
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &_handle, &t)) {
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
         return NULL;
     }
-    retval = turn_STUNConn_SetWriteDeadline(_handle, t);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
+    retval = turn_ClientConfig_STUNServerAddr_Get(handle);
     py_retval = Py_BuildValue((char *) "s", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_STUNConn_SetWriteDeadline(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+PyObject * _wrap__turn_turn_ClientConfig_STUNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_STUNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    char *val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_STUNServerAddr_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_STUNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_TURNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_TURNServerAddr_Get(handle);
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_TURNServerAddr_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_TURNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    char *val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_TURNServerAddr_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_TURNServerAddr_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Username_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_Username_Get(handle);
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Username_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Username_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    char *val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_Username_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Username_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Password_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_Password_Get(handle);
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Password_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Password_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    char *val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_Password_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Password_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Realm_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_Realm_Get(handle);
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Realm_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Realm_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    char *val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_Realm_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Realm_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Software_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_Software_Get(handle);
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Software_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Software_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    char *val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "Ls", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_Software_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Software_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_RTO_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_RTO_Get(handle);
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_RTO_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_RTO_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    int64_t val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_RTO_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_RTO_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Conn_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_Conn_Get(handle);
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Conn_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Conn_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    int64_t val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_Conn_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Conn_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Net_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_Net_Get(handle);
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Net_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_Net_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    int64_t val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_Net_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_Net_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_LoggerFactory_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t handle;
+    const char *keywords[] = {"handle", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &handle)) {
+        return NULL;
+    }
+    retval = turn_ClientConfig_LoggerFactory_Get(handle);
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_LoggerFactory_Get(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_ClientConfig_LoggerFactory_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t handle;
+    int64_t val;
+    const char *keywords[] = {"handle", "val", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &handle, &val)) {
+        return NULL;
+    }
+    turn_ClientConfig_LoggerFactory_Set(handle, val);
+    Py_INCREF(Py_None);
+    py_retval = Py_None;
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_ClientConfig_LoggerFactory_Set(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_NewSTUNConn(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t nextConn;
+    const char *keywords[] = {"nextConn", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &nextConn)) {
+        return NULL;
+    }
+    retval = turn_NewSTUNConn(nextConn);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_NewSTUNConn(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_NewClient(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    int64_t retval;
+    int64_t config;
+    const char *keywords[] = {"config", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &config)) {
+        return NULL;
+    }
+    retval = turn_NewClient(config);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "L", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_NewClient(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 
 PyObject *
@@ -5497,48 +5539,6 @@ PyObject * _wrap__turn_turn_NewServer(PyObject * PYBINDGEN_UNUSED(dummy), PyObje
 
 
 PyObject *
-_wrap__turn_turn_NewClient(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t config;
-    const char *keywords[] = {"config", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &config)) {
-        return NULL;
-    }
-    retval = turn_NewClient(config);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_NewClient(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_NewSTUNConn(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    int64_t nextConn;
-    const char *keywords[] = {"nextConn", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &nextConn)) {
-        return NULL;
-    }
-    retval = turn_NewSTUNConn(nextConn);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_NewSTUNConn(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
 _wrap__turn_turn_NetAddrString(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
@@ -5559,49 +5559,6 @@ _wrap__turn_turn_NetAddrString(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *arg
     return py_retval;
 }
 PyObject * _wrap__turn_turn_NetAddrString(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_NetConnClose(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t conn;
-    const char *keywords[] = {"conn", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &conn)) {
-        return NULL;
-    }
-    retval = turn_NetConnClose(conn);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_NetConnClose(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
-_wrap__turn_turn_NetConnSetTimeout(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    char *retval;
-    int64_t conn;
-    int64_t sec;
-    const char *keywords[] = {"conn", "sec", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &conn, &sec)) {
-        return NULL;
-    }
-    retval = turn_NetConnSetTimeout(conn, sec);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "s", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_NetConnSetTimeout(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 
 PyObject *
@@ -5627,28 +5584,6 @@ PyObject * _wrap__turn_turn_NetListenPacket(PyObject * PYBINDGEN_UNUSED(dummy), 
 
 
 PyObject *
-_wrap__turn_turn_NetResolveUDPAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
-{
-    PyObject *py_retval;
-    int64_t retval;
-    char *network;
-    char *address;
-    const char *keywords[] = {"network", "address", NULL};
-
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "ss", (char **) keywords, &network, &address)) {
-        return NULL;
-    }
-    retval = turn_NetResolveUDPAddr(network, address);
-    if (PyErr_Occurred()) {
-        return NULL;
-    }
-    py_retval = Py_BuildValue((char *) "L", retval);
-    return py_retval;
-}
-PyObject * _wrap__turn_turn_NetResolveUDPAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
-
-
-PyObject *
 _wrap__turn_turn_NetConnWriteTo(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
@@ -5669,6 +5604,28 @@ _wrap__turn_turn_NetConnWriteTo(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *ar
     return py_retval;
 }
 PyObject * _wrap__turn_turn_NetConnWriteTo(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_NetUDPAddrChangePort(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t addr;
+    int64_t port;
+    const char *keywords[] = {"addr", "port", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &addr, &port)) {
+        return NULL;
+    }
+    retval = turn_NetUDPAddrChangePort(addr, port);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_NetUDPAddrChangePort(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 
 PyObject *
@@ -5717,6 +5674,49 @@ PyObject * _wrap__turn_turn_GenerateAuthKey(PyObject * PYBINDGEN_UNUSED(dummy), 
 
 
 PyObject *
+_wrap__turn_turn_NetConnSetTimeout(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t conn;
+    int64_t sec;
+    const char *keywords[] = {"conn", "sec", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &conn, &sec)) {
+        return NULL;
+    }
+    retval = turn_NetConnSetTimeout(conn, sec);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_NetConnSetTimeout(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
+_wrap__turn_turn_NetConnClose(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+{
+    PyObject *py_retval;
+    char *retval;
+    int64_t conn;
+    const char *keywords[] = {"conn", NULL};
+
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "L", (char **) keywords, &conn)) {
+        return NULL;
+    }
+    retval = turn_NetConnClose(conn);
+    if (PyErr_Occurred()) {
+        return NULL;
+    }
+    py_retval = Py_BuildValue((char *) "s", retval);
+    return py_retval;
+}
+PyObject * _wrap__turn_turn_NetConnClose(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+
+
+PyObject *
 _wrap__turn_turn_NetConnGetLocalAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
@@ -5738,25 +5738,25 @@ PyObject * _wrap__turn_turn_NetConnGetLocalAddr(PyObject * PYBINDGEN_UNUSED(dumm
 
 
 PyObject *
-_wrap__turn_turn_NetUDPAddrChangePort(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
+_wrap__turn_turn_NetResolveUDPAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs)
 {
     PyObject *py_retval;
-    char *retval;
-    int64_t addr;
-    int64_t port;
-    const char *keywords[] = {"addr", "port", NULL};
+    int64_t retval;
+    char *network;
+    char *address;
+    const char *keywords[] = {"network", "address", NULL};
 
-    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "LL", (char **) keywords, &addr, &port)) {
+    if (!PyArg_ParseTupleAndKeywords(args, kwargs, (char *) "ss", (char **) keywords, &network, &address)) {
         return NULL;
     }
-    retval = turn_NetUDPAddrChangePort(addr, port);
+    retval = turn_NetResolveUDPAddr(network, address);
     if (PyErr_Occurred()) {
         return NULL;
     }
-    py_retval = Py_BuildValue((char *) "s", retval);
+    py_retval = Py_BuildValue((char *) "L", retval);
     return py_retval;
 }
-PyObject * _wrap__turn_turn_NetUDPAddrChangePort(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
+PyObject * _wrap__turn_turn_NetResolveUDPAddr(PyObject * PYBINDGEN_UNUSED(dummy), PyObject *args, PyObject *kwargs);
 
 static PyMethodDef _turn_functions[] = {
     {(char *) "GoPyInit", (PyCFunction) _wrap__turn_GoPyInit, METH_NOARGS, "GoPyInit()\n\n" },
@@ -5944,41 +5944,19 @@ static PyMethodDef _turn_functions[] = {
     {(char *) "Slice_net_Addr_set", (PyCFunction) _wrap__turn_Slice_net_Addr_set, METH_KEYWORDS|METH_VARARGS, "Slice_net_Addr_set(handle, idx, value)\n\ntype: handle: int64_t\ntype: idx: int\ntype: value: int64_t" },
     {(char *) "Slice_net_Addr_append", (PyCFunction) _wrap__turn_Slice_net_Addr_append, METH_KEYWORDS|METH_VARARGS, "Slice_net_Addr_append(handle, value)\n\ntype: handle: int64_t\ntype: value: int64_t" },
     {(char *) "turn_RelayAddressGenerator_Validate", (PyCFunction) _wrap__turn_turn_RelayAddressGenerator_Validate, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGenerator_Validate(_handle)\n\ntype: _handle: int64_t" },
-    {(char *) "turn_ClientConfig_CTor", (PyCFunction) _wrap__turn_turn_ClientConfig_CTor, METH_NOARGS, "turn_ClientConfig_CTor()\n\n" },
-    {(char *) "turn_ClientConfig_STUNServerAddr_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_STUNServerAddr_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_STUNServerAddr_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_STUNServerAddr_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_STUNServerAddr_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_STUNServerAddr_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
-    {(char *) "turn_ClientConfig_TURNServerAddr_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_TURNServerAddr_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_TURNServerAddr_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_TURNServerAddr_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_TURNServerAddr_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_TURNServerAddr_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
-    {(char *) "turn_ClientConfig_Username_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Username_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Username_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_Username_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Username_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Username_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
-    {(char *) "turn_ClientConfig_Password_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Password_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Password_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_Password_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Password_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Password_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
-    {(char *) "turn_ClientConfig_Realm_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Realm_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Realm_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_Realm_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Realm_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Realm_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
-    {(char *) "turn_ClientConfig_Software_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Software_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Software_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_Software_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Software_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Software_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
-    {(char *) "turn_ClientConfig_RTO_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_RTO_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_RTO_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_RTO_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_RTO_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_RTO_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
-    {(char *) "turn_ClientConfig_Conn_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Conn_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Conn_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_Conn_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Conn_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Conn_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
-    {(char *) "turn_ClientConfig_Net_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Net_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Net_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_Net_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Net_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Net_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
-    {(char *) "turn_ClientConfig_LoggerFactory_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_LoggerFactory_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_LoggerFactory_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_ClientConfig_LoggerFactory_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_LoggerFactory_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_LoggerFactory_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
-    {(char *) "turn_RecievedPacket_CTor", (PyCFunction) _wrap__turn_turn_RecievedPacket_CTor, METH_NOARGS, "turn_RecievedPacket_CTor()\n\n" },
-    {(char *) "turn_RecievedPacket_N_Get", (PyCFunction) _wrap__turn_turn_RecievedPacket_N_Get, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_N_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_RecievedPacket_N_Set", (PyCFunction) _wrap__turn_turn_RecievedPacket_N_Set, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_N_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
-    {(char *) "turn_RecievedPacket_Addr_Get", (PyCFunction) _wrap__turn_turn_RecievedPacket_Addr_Get, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_Addr_Get(handle)\n\ntype: handle: int64_t" },
-    {(char *) "turn_RecievedPacket_Addr_Set", (PyCFunction) _wrap__turn_turn_RecievedPacket_Addr_Set, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_Addr_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
     {(char *) "turn_RelayAddressGeneratorNone_CTor", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorNone_CTor, METH_NOARGS, "turn_RelayAddressGeneratorNone_CTor()\n\n" },
     {(char *) "turn_RelayAddressGeneratorNone_Address_Get", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorNone_Address_Get, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorNone_Address_Get(handle)\n\ntype: handle: int64_t" },
     {(char *) "turn_RelayAddressGeneratorNone_Address_Set", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorNone_Address_Set, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorNone_Address_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
     {(char *) "turn_RelayAddressGeneratorNone_Net_Get", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorNone_Net_Get, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorNone_Net_Get(handle)\n\ntype: handle: int64_t" },
     {(char *) "turn_RelayAddressGeneratorNone_Net_Set", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorNone_Net_Set, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorNone_Net_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
     {(char *) "turn_RelayAddressGeneratorNone_Validate", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorNone_Validate, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorNone_Validate(_handle)\n\ntype: _handle: int64_t" },
-    {(char *) "turn_Server_CTor", (PyCFunction) _wrap__turn_turn_Server_CTor, METH_NOARGS, "turn_Server_CTor()\n\n" },
-    {(char *) "turn_Server_AllocationCount", (PyCFunction) _wrap__turn_turn_Server_AllocationCount, METH_KEYWORDS|METH_VARARGS, "turn_Server_AllocationCount(_handle)\n\ntype: _handle: int64_t" },
-    {(char *) "turn_Server_Close", (PyCFunction) _wrap__turn_turn_Server_Close, METH_KEYWORDS|METH_VARARGS, "turn_Server_Close(_handle)\n\ntype: _handle: int64_t" },
+    {(char *) "turn_STUNConn_CTor", (PyCFunction) _wrap__turn_turn_STUNConn_CTor, METH_NOARGS, "turn_STUNConn_CTor()\n\n" },
+    {(char *) "turn_STUNConn_WriteTo", (PyCFunction) _wrap__turn_turn_STUNConn_WriteTo, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_WriteTo(_handle, p, _)\n\ntype: _handle: int64_t\ntype: p: int64_t\ntype: _: int64_t" },
+    {(char *) "turn_STUNConn_Close", (PyCFunction) _wrap__turn_turn_STUNConn_Close, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_Close(_handle)\n\ntype: _handle: int64_t" },
+    {(char *) "turn_STUNConn_LocalAddr", (PyCFunction) _wrap__turn_turn_STUNConn_LocalAddr, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_LocalAddr(_handle)\n\ntype: _handle: int64_t" },
+    {(char *) "turn_STUNConn_SetDeadline", (PyCFunction) _wrap__turn_turn_STUNConn_SetDeadline, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_SetDeadline(_handle, t)\n\ntype: _handle: int64_t\ntype: t: int64_t" },
+    {(char *) "turn_STUNConn_SetReadDeadline", (PyCFunction) _wrap__turn_turn_STUNConn_SetReadDeadline, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_SetReadDeadline(_handle, t)\n\ntype: _handle: int64_t\ntype: t: int64_t" },
+    {(char *) "turn_STUNConn_SetWriteDeadline", (PyCFunction) _wrap__turn_turn_STUNConn_SetWriteDeadline, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_SetWriteDeadline(_handle, t)\n\ntype: _handle: int64_t\ntype: t: int64_t" },
     {(char *) "turn_ServerConfig_CTor", (PyCFunction) _wrap__turn_turn_ServerConfig_CTor, METH_NOARGS, "turn_ServerConfig_CTor()\n\n" },
     {(char *) "turn_ServerConfig_PacketConnConfigs_Get", (PyCFunction) _wrap__turn_turn_ServerConfig_PacketConnConfigs_Get, METH_KEYWORDS|METH_VARARGS, "turn_ServerConfig_PacketConnConfigs_Get(handle)\n\ntype: handle: int64_t" },
     {(char *) "turn_ServerConfig_PacketConnConfigs_Set", (PyCFunction) _wrap__turn_turn_ServerConfig_PacketConnConfigs_Set, METH_KEYWORDS|METH_VARARGS, "turn_ServerConfig_PacketConnConfigs_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
@@ -6018,6 +5996,11 @@ static PyMethodDef _turn_functions[] = {
     {(char *) "turn_PacketConnConfig_PacketConn_Set", (PyCFunction) _wrap__turn_turn_PacketConnConfig_PacketConn_Set, METH_KEYWORDS|METH_VARARGS, "turn_PacketConnConfig_PacketConn_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
     {(char *) "turn_PacketConnConfig_RelayAddressGenerator_Get", (PyCFunction) _wrap__turn_turn_PacketConnConfig_RelayAddressGenerator_Get, METH_KEYWORDS|METH_VARARGS, "turn_PacketConnConfig_RelayAddressGenerator_Get(handle)\n\ntype: handle: int64_t" },
     {(char *) "turn_PacketConnConfig_RelayAddressGenerator_Set", (PyCFunction) _wrap__turn_turn_PacketConnConfig_RelayAddressGenerator_Set, METH_KEYWORDS|METH_VARARGS, "turn_PacketConnConfig_RelayAddressGenerator_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
+    {(char *) "turn_RecievedPacket_CTor", (PyCFunction) _wrap__turn_turn_RecievedPacket_CTor, METH_NOARGS, "turn_RecievedPacket_CTor()\n\n" },
+    {(char *) "turn_RecievedPacket_N_Get", (PyCFunction) _wrap__turn_turn_RecievedPacket_N_Get, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_N_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_RecievedPacket_N_Set", (PyCFunction) _wrap__turn_turn_RecievedPacket_N_Set, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_N_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
+    {(char *) "turn_RecievedPacket_Addr_Get", (PyCFunction) _wrap__turn_turn_RecievedPacket_Addr_Get, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_Addr_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_RecievedPacket_Addr_Set", (PyCFunction) _wrap__turn_turn_RecievedPacket_Addr_Set, METH_KEYWORDS|METH_VARARGS, "turn_RecievedPacket_Addr_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
     {(char *) "turn_RelayAddressGeneratorPortRange_CTor", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorPortRange_CTor, METH_NOARGS, "turn_RelayAddressGeneratorPortRange_CTor()\n\n" },
     {(char *) "turn_RelayAddressGeneratorPortRange_RelayAddress_Get", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorPortRange_RelayAddress_Get, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorPortRange_RelayAddress_Get(handle)\n\ntype: handle: int64_t" },
     {(char *) "turn_RelayAddressGeneratorPortRange_RelayAddress_Set", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorPortRange_RelayAddress_Set, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorPortRange_RelayAddress_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
@@ -6042,27 +6025,44 @@ static PyMethodDef _turn_functions[] = {
     {(char *) "turn_RelayAddressGeneratorStatic_Net_Get", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorStatic_Net_Get, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorStatic_Net_Get(handle)\n\ntype: handle: int64_t" },
     {(char *) "turn_RelayAddressGeneratorStatic_Net_Set", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorStatic_Net_Set, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorStatic_Net_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
     {(char *) "turn_RelayAddressGeneratorStatic_Validate", (PyCFunction) _wrap__turn_turn_RelayAddressGeneratorStatic_Validate, METH_KEYWORDS|METH_VARARGS, "turn_RelayAddressGeneratorStatic_Validate(_handle)\n\ntype: _handle: int64_t" },
-    {(char *) "turn_STUNConn_CTor", (PyCFunction) _wrap__turn_turn_STUNConn_CTor, METH_NOARGS, "turn_STUNConn_CTor()\n\n" },
-    {(char *) "turn_STUNConn_WriteTo", (PyCFunction) _wrap__turn_turn_STUNConn_WriteTo, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_WriteTo(_handle, p, _)\n\ntype: _handle: int64_t\ntype: p: int64_t\ntype: _: int64_t" },
-    {(char *) "turn_STUNConn_Close", (PyCFunction) _wrap__turn_turn_STUNConn_Close, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_Close(_handle)\n\ntype: _handle: int64_t" },
-    {(char *) "turn_STUNConn_LocalAddr", (PyCFunction) _wrap__turn_turn_STUNConn_LocalAddr, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_LocalAddr(_handle)\n\ntype: _handle: int64_t" },
-    {(char *) "turn_STUNConn_SetDeadline", (PyCFunction) _wrap__turn_turn_STUNConn_SetDeadline, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_SetDeadline(_handle, t)\n\ntype: _handle: int64_t\ntype: t: int64_t" },
-    {(char *) "turn_STUNConn_SetReadDeadline", (PyCFunction) _wrap__turn_turn_STUNConn_SetReadDeadline, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_SetReadDeadline(_handle, t)\n\ntype: _handle: int64_t\ntype: t: int64_t" },
-    {(char *) "turn_STUNConn_SetWriteDeadline", (PyCFunction) _wrap__turn_turn_STUNConn_SetWriteDeadline, METH_KEYWORDS|METH_VARARGS, "turn_STUNConn_SetWriteDeadline(_handle, t)\n\ntype: _handle: int64_t\ntype: t: int64_t" },
+    {(char *) "turn_Server_CTor", (PyCFunction) _wrap__turn_turn_Server_CTor, METH_NOARGS, "turn_Server_CTor()\n\n" },
+    {(char *) "turn_Server_AllocationCount", (PyCFunction) _wrap__turn_turn_Server_AllocationCount, METH_KEYWORDS|METH_VARARGS, "turn_Server_AllocationCount(_handle)\n\ntype: _handle: int64_t" },
+    {(char *) "turn_Server_Close", (PyCFunction) _wrap__turn_turn_Server_Close, METH_KEYWORDS|METH_VARARGS, "turn_Server_Close(_handle)\n\ntype: _handle: int64_t" },
+    {(char *) "turn_ClientConfig_CTor", (PyCFunction) _wrap__turn_turn_ClientConfig_CTor, METH_NOARGS, "turn_ClientConfig_CTor()\n\n" },
+    {(char *) "turn_ClientConfig_STUNServerAddr_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_STUNServerAddr_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_STUNServerAddr_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_STUNServerAddr_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_STUNServerAddr_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_STUNServerAddr_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
+    {(char *) "turn_ClientConfig_TURNServerAddr_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_TURNServerAddr_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_TURNServerAddr_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_TURNServerAddr_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_TURNServerAddr_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_TURNServerAddr_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
+    {(char *) "turn_ClientConfig_Username_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Username_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Username_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_Username_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Username_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Username_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
+    {(char *) "turn_ClientConfig_Password_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Password_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Password_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_Password_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Password_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Password_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
+    {(char *) "turn_ClientConfig_Realm_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Realm_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Realm_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_Realm_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Realm_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Realm_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
+    {(char *) "turn_ClientConfig_Software_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Software_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Software_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_Software_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Software_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Software_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: char *" },
+    {(char *) "turn_ClientConfig_RTO_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_RTO_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_RTO_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_RTO_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_RTO_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_RTO_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
+    {(char *) "turn_ClientConfig_Conn_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Conn_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Conn_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_Conn_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Conn_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Conn_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
+    {(char *) "turn_ClientConfig_Net_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_Net_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Net_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_Net_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_Net_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_Net_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
+    {(char *) "turn_ClientConfig_LoggerFactory_Get", (PyCFunction) _wrap__turn_turn_ClientConfig_LoggerFactory_Get, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_LoggerFactory_Get(handle)\n\ntype: handle: int64_t" },
+    {(char *) "turn_ClientConfig_LoggerFactory_Set", (PyCFunction) _wrap__turn_turn_ClientConfig_LoggerFactory_Set, METH_KEYWORDS|METH_VARARGS, "turn_ClientConfig_LoggerFactory_Set(handle, val)\n\ntype: handle: int64_t\ntype: val: int64_t" },
+    {(char *) "turn_NewSTUNConn", (PyCFunction) _wrap__turn_turn_NewSTUNConn, METH_KEYWORDS|METH_VARARGS, "turn_NewSTUNConn(nextConn)\n\ntype: nextConn: int64_t" },
+    {(char *) "turn_NewClient", (PyCFunction) _wrap__turn_turn_NewClient, METH_KEYWORDS|METH_VARARGS, "turn_NewClient(config)\n\ntype: config: int64_t" },
     {(char *) "turn_NetConnReadFrom", (PyCFunction) _wrap__turn_turn_NetConnReadFrom, METH_KEYWORDS|METH_VARARGS, "turn_NetConnReadFrom(conn, p)\n\ntype: conn: int64_t\ntype: p: int64_t" },
     {(char *) "turn_NewServer", (PyCFunction) _wrap__turn_turn_NewServer, METH_KEYWORDS|METH_VARARGS, "turn_NewServer(config)\n\ntype: config: int64_t" },
-    {(char *) "turn_NewClient", (PyCFunction) _wrap__turn_turn_NewClient, METH_KEYWORDS|METH_VARARGS, "turn_NewClient(config)\n\ntype: config: int64_t" },
-    {(char *) "turn_NewSTUNConn", (PyCFunction) _wrap__turn_turn_NewSTUNConn, METH_KEYWORDS|METH_VARARGS, "turn_NewSTUNConn(nextConn)\n\ntype: nextConn: int64_t" },
     {(char *) "turn_NetAddrString", (PyCFunction) _wrap__turn_turn_NetAddrString, METH_KEYWORDS|METH_VARARGS, "turn_NetAddrString(addr)\n\ntype: addr: int64_t" },
-    {(char *) "turn_NetConnClose", (PyCFunction) _wrap__turn_turn_NetConnClose, METH_KEYWORDS|METH_VARARGS, "turn_NetConnClose(conn)\n\ntype: conn: int64_t" },
-    {(char *) "turn_NetConnSetTimeout", (PyCFunction) _wrap__turn_turn_NetConnSetTimeout, METH_KEYWORDS|METH_VARARGS, "turn_NetConnSetTimeout(conn, sec)\n\ntype: conn: int64_t\ntype: sec: int64_t" },
     {(char *) "turn_NetListenPacket", (PyCFunction) _wrap__turn_turn_NetListenPacket, METH_KEYWORDS|METH_VARARGS, "turn_NetListenPacket(network, address)\n\ntype: network: char *\ntype: address: char *" },
-    {(char *) "turn_NetResolveUDPAddr", (PyCFunction) _wrap__turn_turn_NetResolveUDPAddr, METH_KEYWORDS|METH_VARARGS, "turn_NetResolveUDPAddr(network, address)\n\ntype: network: char *\ntype: address: char *" },
     {(char *) "turn_NetConnWriteTo", (PyCFunction) _wrap__turn_turn_NetConnWriteTo, METH_KEYWORDS|METH_VARARGS, "turn_NetConnWriteTo(conn, p, addr)\n\ntype: conn: int64_t\ntype: p: int64_t\ntype: addr: int64_t" },
+    {(char *) "turn_NetUDPAddrChangePort", (PyCFunction) _wrap__turn_turn_NetUDPAddrChangePort, METH_KEYWORDS|METH_VARARGS, "turn_NetUDPAddrChangePort(addr, port)\n\ntype: addr: int64_t\ntype: port: int64_t" },
     {(char *) "turn_DefaultPermissionHandler", (PyCFunction) _wrap__turn_turn_DefaultPermissionHandler, METH_KEYWORDS|METH_VARARGS, "turn_DefaultPermissionHandler(arg_0, arg_1)\n\ntype: arg_0: int64_t\ntype: arg_1: int64_t" },
     {(char *) "turn_GenerateAuthKey", (PyCFunction) _wrap__turn_turn_GenerateAuthKey, METH_KEYWORDS|METH_VARARGS, "turn_GenerateAuthKey(username, realm, password)\n\ntype: username: char *\ntype: realm: char *\ntype: password: char *" },
+    {(char *) "turn_NetConnSetTimeout", (PyCFunction) _wrap__turn_turn_NetConnSetTimeout, METH_KEYWORDS|METH_VARARGS, "turn_NetConnSetTimeout(conn, sec)\n\ntype: conn: int64_t\ntype: sec: int64_t" },
+    {(char *) "turn_NetConnClose", (PyCFunction) _wrap__turn_turn_NetConnClose, METH_KEYWORDS|METH_VARARGS, "turn_NetConnClose(conn)\n\ntype: conn: int64_t" },
     {(char *) "turn_NetConnGetLocalAddr", (PyCFunction) _wrap__turn_turn_NetConnGetLocalAddr, METH_KEYWORDS|METH_VARARGS, "turn_NetConnGetLocalAddr(conn)\n\ntype: conn: int64_t" },
-    {(char *) "turn_NetUDPAddrChangePort", (PyCFunction) _wrap__turn_turn_NetUDPAddrChangePort, METH_KEYWORDS|METH_VARARGS, "turn_NetUDPAddrChangePort(addr, port)\n\ntype: addr: int64_t\ntype: port: int64_t" },
+    {(char *) "turn_NetResolveUDPAddr", (PyCFunction) _wrap__turn_turn_NetResolveUDPAddr, METH_KEYWORDS|METH_VARARGS, "turn_NetResolveUDPAddr(network, address)\n\ntype: network: char *\ntype: address: char *" },
     {NULL, NULL, 0, NULL}
 };
 #if PY_VERSION_HEX >= 0x03000000

@@ -8,8 +8,8 @@ package main
 
 /*
 
-#cgo CFLAGS: -I/Library/Frameworks/Python.framework/Versions/3.11/include/python3.11 -Wno-error -Wno-implicit-function-declaration -Wno-int-conversion
-#cgo LDFLAGS: -L/Library/Frameworks/Python.framework/Versions/3.11/lib -lpython3.11 -ldl  -framework CoreFoundation
+#cgo CFLAGS: -I/Library/Frameworks/Python.framework/Versions/3.12/include/python3.12 -Wno-error -Wno-implicit-function-declaration -Wno-int-conversion
+#cgo LDFLAGS: -L/Library/Frameworks/Python.framework/Versions/3.12/lib -lpython3.12 -ldl  -framework CoreFoundation
 
 // #define Py_LIMITED_API // need full API for PyRun*
 #include <Python.h>
@@ -2523,153 +2523,6 @@ func turn_RelayAddressGenerator_Validate(_handle CGoHandle) *C.char {
 
 // ---- Structs ---
 
-// --- wrapping struct: turn.STUNConn ---
-//
-//export turn_STUNConn_CTor
-func turn_STUNConn_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_STUNConn(&turn.STUNConn{}))
-}
-
-//export turn_STUNConn_WriteTo
-func turn_STUNConn_WriteTo(_handle CGoHandle, p CGoHandle, q CGoHandle) C.longlong {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return C.longlong(0)
-	}
-	cret, __err := gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).WriteTo(deptrFromHandle_Slice_byte(p), ptrFromHandle_net_Addr(q))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return C.longlong(0)
-	}
-	return C.longlong(cret)
-}
-
-//export turn_STUNConn_Close
-func turn_STUNConn_Close(_handle CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).Close()
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-//export turn_STUNConn_LocalAddr
-func turn_STUNConn_LocalAddr(_handle CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return handleFromPtr_net_Addr(nil)
-	}
-	return handleFromPtr_net_Addr(gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).LocalAddr())
-
-}
-
-//export turn_STUNConn_SetDeadline
-func turn_STUNConn_SetDeadline(_handle CGoHandle, t CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetDeadline(*ptrFromHandle_time_Time(t))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-//export turn_STUNConn_SetReadDeadline
-func turn_STUNConn_SetReadDeadline(_handle CGoHandle, t CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetReadDeadline(*ptrFromHandle_time_Time(t))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-//export turn_STUNConn_SetWriteDeadline
-func turn_STUNConn_SetWriteDeadline(_handle CGoHandle, t CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetWriteDeadline(*ptrFromHandle_time_Time(t))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-// --- wrapping struct: turn.Server ---
-//
-//export turn_Server_CTor
-func turn_Server_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_Server(&turn.Server{}))
-}
-
-//export turn_Server_AllocationCount
-func turn_Server_AllocationCount(_handle CGoHandle) C.longlong {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.Server")
-	if __err != nil {
-		return C.longlong(0)
-	}
-	return C.longlong(gopyh.Embed(vifc, reflect.TypeOf(turn.Server{})).(*turn.Server).AllocationCount())
-
-}
-
-//export turn_Server_Close
-func turn_Server_Close(_handle CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.Server")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.Server{})).(*turn.Server).Close()
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
 // --- wrapping struct: turn.Client ---
 //
 //export turn_Client_CTor
@@ -2926,6 +2779,43 @@ func turn_Client_HandleInbound(_handle CGoHandle, data CGoHandle, myfrom CGoHand
 	return boolGoToPy(cret)
 }
 
+// --- wrapping struct: turn.Server ---
+//
+//export turn_Server_CTor
+func turn_Server_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_Server(&turn.Server{}))
+}
+
+//export turn_Server_AllocationCount
+func turn_Server_AllocationCount(_handle CGoHandle) C.longlong {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.Server")
+	if __err != nil {
+		return C.longlong(0)
+	}
+	return C.longlong(gopyh.Embed(vifc, reflect.TypeOf(turn.Server{})).(*turn.Server).AllocationCount())
+
+}
+
+//export turn_Server_Close
+func turn_Server_Close(_handle CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.Server")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.Server{})).(*turn.Server).Close()
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
 // --- wrapping struct: turn.ClientConfig ---
 //
 //export turn_ClientConfig_CTor
@@ -3084,134 +2974,6 @@ func turn_ListenerConfig_RelayAddressGenerator_Set(handle CGoHandle, val CGoHand
 	op.RelayAddressGenerator = ptrFromHandle_turn_RelayAddressGenerator(val)
 }
 
-// --- wrapping struct: turn.RelayAddressGeneratorNone ---
-//
-//export turn_RelayAddressGeneratorNone_CTor
-func turn_RelayAddressGeneratorNone_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_RelayAddressGeneratorNone(&turn.RelayAddressGeneratorNone{}))
-}
-
-//export turn_RelayAddressGeneratorNone_Address_Get
-func turn_RelayAddressGeneratorNone_Address_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	return C.CString(op.Address)
-}
-
-//export turn_RelayAddressGeneratorNone_Address_Set
-func turn_RelayAddressGeneratorNone_Address_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	op.Address = C.GoString(val)
-}
-
-//export turn_RelayAddressGeneratorNone_Net_Get
-func turn_RelayAddressGeneratorNone_Net_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	return handleFromPtr_transport_Net(op.Net)
-}
-
-//export turn_RelayAddressGeneratorNone_Net_Set
-func turn_RelayAddressGeneratorNone_Net_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
-	op.Net = ptrFromHandle_transport_Net(val)
-}
-
-//export turn_RelayAddressGeneratorNone_Validate
-func turn_RelayAddressGeneratorNone_Validate(_handle CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.RelayAddressGeneratorNone")
-	if __err != nil {
-		return errorGoToPy(nil)
-	}
-	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.RelayAddressGeneratorNone{})).(*turn.RelayAddressGeneratorNone).Validate()
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-// --- wrapping struct: turn.ServerConfig ---
-//
-//export turn_ServerConfig_CTor
-func turn_ServerConfig_CTor() CGoHandle {
-	return CGoHandle(handleFromPtr_turn_ServerConfig(&turn.ServerConfig{}))
-}
-
-//export turn_ServerConfig_PacketConnConfigs_Get
-func turn_ServerConfig_PacketConnConfigs_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return handleFromPtr_Slice_turn_PacketConnConfig(&op.PacketConnConfigs)
-}
-
-//export turn_ServerConfig_PacketConnConfigs_Set
-func turn_ServerConfig_PacketConnConfigs_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.PacketConnConfigs = deptrFromHandle_Slice_turn_PacketConnConfig(val)
-}
-
-//export turn_ServerConfig_ListenerConfigs_Get
-func turn_ServerConfig_ListenerConfigs_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return handleFromPtr_Slice_turn_ListenerConfig(&op.ListenerConfigs)
-}
-
-//export turn_ServerConfig_ListenerConfigs_Set
-func turn_ServerConfig_ListenerConfigs_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.ListenerConfigs = deptrFromHandle_Slice_turn_ListenerConfig(val)
-}
-
-//export turn_ServerConfig_LoggerFactory_Get
-func turn_ServerConfig_LoggerFactory_Get(handle CGoHandle) CGoHandle {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return handleFromPtr_logging_LoggerFactory(op.LoggerFactory)
-}
-
-//export turn_ServerConfig_LoggerFactory_Set
-func turn_ServerConfig_LoggerFactory_Set(handle CGoHandle, val CGoHandle) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.LoggerFactory = ptrFromHandle_logging_LoggerFactory(val)
-}
-
-//export turn_ServerConfig_Realm_Get
-func turn_ServerConfig_Realm_Get(handle CGoHandle) *C.char {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return C.CString(op.Realm)
-}
-
-//export turn_ServerConfig_Realm_Set
-func turn_ServerConfig_Realm_Set(handle CGoHandle, val *C.char) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.Realm = C.GoString(val)
-}
-
-//export turn_ServerConfig_ChannelBindTimeout_Get
-func turn_ServerConfig_ChannelBindTimeout_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return C.longlong(int64(op.ChannelBindTimeout))
-}
-
-//export turn_ServerConfig_ChannelBindTimeout_Set
-func turn_ServerConfig_ChannelBindTimeout_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.ChannelBindTimeout = time.Duration(int64(val))
-}
-
-//export turn_ServerConfig_InboundMTU_Get
-func turn_ServerConfig_InboundMTU_Get(handle CGoHandle) C.longlong {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	return C.longlong(op.InboundMTU)
-}
-
-//export turn_ServerConfig_InboundMTU_Set
-func turn_ServerConfig_InboundMTU_Set(handle CGoHandle, val C.longlong) {
-	op := ptrFromHandle_turn_ServerConfig(handle)
-	op.InboundMTU = int(val)
-}
-
 // --- wrapping struct: turn.PacketConnConfig ---
 //
 //export turn_PacketConnConfig_CTor
@@ -3272,6 +3034,55 @@ func turn_RecievedPacket_Addr_Get(handle CGoHandle) CGoHandle {
 func turn_RecievedPacket_Addr_Set(handle CGoHandle, val CGoHandle) {
 	op := ptrFromHandle_turn_RecievedPacket(handle)
 	op.Addr = ptrFromHandle_net_Addr(val)
+}
+
+// --- wrapping struct: turn.RelayAddressGeneratorNone ---
+//
+//export turn_RelayAddressGeneratorNone_CTor
+func turn_RelayAddressGeneratorNone_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_RelayAddressGeneratorNone(&turn.RelayAddressGeneratorNone{}))
+}
+
+//export turn_RelayAddressGeneratorNone_Address_Get
+func turn_RelayAddressGeneratorNone_Address_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	return C.CString(op.Address)
+}
+
+//export turn_RelayAddressGeneratorNone_Address_Set
+func turn_RelayAddressGeneratorNone_Address_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	op.Address = C.GoString(val)
+}
+
+//export turn_RelayAddressGeneratorNone_Net_Get
+func turn_RelayAddressGeneratorNone_Net_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	return handleFromPtr_transport_Net(op.Net)
+}
+
+//export turn_RelayAddressGeneratorNone_Net_Set
+func turn_RelayAddressGeneratorNone_Net_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_RelayAddressGeneratorNone(handle)
+	op.Net = ptrFromHandle_transport_Net(val)
+}
+
+//export turn_RelayAddressGeneratorNone_Validate
+func turn_RelayAddressGeneratorNone_Validate(_handle CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.RelayAddressGeneratorNone")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.RelayAddressGeneratorNone{})).(*turn.RelayAddressGeneratorNone).Validate()
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
 }
 
 // --- wrapping struct: turn.RelayAddressGeneratorPortRange ---
@@ -3444,18 +3255,214 @@ func turn_RelayAddressGeneratorStatic_Validate(_handle CGoHandle) *C.char {
 	return C.CString("")
 }
 
+// --- wrapping struct: turn.STUNConn ---
+//
+//export turn_STUNConn_CTor
+func turn_STUNConn_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_STUNConn(&turn.STUNConn{}))
+}
+
+//export turn_STUNConn_WriteTo
+func turn_STUNConn_WriteTo(_handle CGoHandle, p CGoHandle, q CGoHandle) C.longlong {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return C.longlong(0)
+	}
+	cret, __err := gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).WriteTo(deptrFromHandle_Slice_byte(p), ptrFromHandle_net_Addr(q))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return C.longlong(0)
+	}
+	return C.longlong(cret)
+}
+
+//export turn_STUNConn_Close
+func turn_STUNConn_Close(_handle CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).Close()
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_STUNConn_LocalAddr
+func turn_STUNConn_LocalAddr(_handle CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return handleFromPtr_net_Addr(nil)
+	}
+	return handleFromPtr_net_Addr(gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).LocalAddr())
+
+}
+
+//export turn_STUNConn_SetDeadline
+func turn_STUNConn_SetDeadline(_handle CGoHandle, t CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetDeadline(*ptrFromHandle_time_Time(t))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_STUNConn_SetReadDeadline
+func turn_STUNConn_SetReadDeadline(_handle CGoHandle, t CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetReadDeadline(*ptrFromHandle_time_Time(t))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_STUNConn_SetWriteDeadline
+func turn_STUNConn_SetWriteDeadline(_handle CGoHandle, t CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	vifc, __err := gopyh.VarFromHandleTry((gopyh.CGoHandle)(_handle), "*turn.STUNConn")
+	if __err != nil {
+		return errorGoToPy(nil)
+	}
+	__err = gopyh.Embed(vifc, reflect.TypeOf(turn.STUNConn{})).(*turn.STUNConn).SetWriteDeadline(*ptrFromHandle_time_Time(t))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+// --- wrapping struct: turn.ServerConfig ---
+//
+//export turn_ServerConfig_CTor
+func turn_ServerConfig_CTor() CGoHandle {
+	return CGoHandle(handleFromPtr_turn_ServerConfig(&turn.ServerConfig{}))
+}
+
+//export turn_ServerConfig_PacketConnConfigs_Get
+func turn_ServerConfig_PacketConnConfigs_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return handleFromPtr_Slice_turn_PacketConnConfig(&op.PacketConnConfigs)
+}
+
+//export turn_ServerConfig_PacketConnConfigs_Set
+func turn_ServerConfig_PacketConnConfigs_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.PacketConnConfigs = deptrFromHandle_Slice_turn_PacketConnConfig(val)
+}
+
+//export turn_ServerConfig_ListenerConfigs_Get
+func turn_ServerConfig_ListenerConfigs_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return handleFromPtr_Slice_turn_ListenerConfig(&op.ListenerConfigs)
+}
+
+//export turn_ServerConfig_ListenerConfigs_Set
+func turn_ServerConfig_ListenerConfigs_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.ListenerConfigs = deptrFromHandle_Slice_turn_ListenerConfig(val)
+}
+
+//export turn_ServerConfig_LoggerFactory_Get
+func turn_ServerConfig_LoggerFactory_Get(handle CGoHandle) CGoHandle {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return handleFromPtr_logging_LoggerFactory(op.LoggerFactory)
+}
+
+//export turn_ServerConfig_LoggerFactory_Set
+func turn_ServerConfig_LoggerFactory_Set(handle CGoHandle, val CGoHandle) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.LoggerFactory = ptrFromHandle_logging_LoggerFactory(val)
+}
+
+//export turn_ServerConfig_Realm_Get
+func turn_ServerConfig_Realm_Get(handle CGoHandle) *C.char {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return C.CString(op.Realm)
+}
+
+//export turn_ServerConfig_Realm_Set
+func turn_ServerConfig_Realm_Set(handle CGoHandle, val *C.char) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.Realm = C.GoString(val)
+}
+
+//export turn_ServerConfig_ChannelBindTimeout_Get
+func turn_ServerConfig_ChannelBindTimeout_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return C.longlong(int64(op.ChannelBindTimeout))
+}
+
+//export turn_ServerConfig_ChannelBindTimeout_Set
+func turn_ServerConfig_ChannelBindTimeout_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.ChannelBindTimeout = time.Duration(int64(val))
+}
+
+//export turn_ServerConfig_InboundMTU_Get
+func turn_ServerConfig_InboundMTU_Get(handle CGoHandle) C.longlong {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	return C.longlong(op.InboundMTU)
+}
+
+//export turn_ServerConfig_InboundMTU_Set
+func turn_ServerConfig_InboundMTU_Set(handle CGoHandle, val C.longlong) {
+	op := ptrFromHandle_turn_ServerConfig(handle)
+	op.InboundMTU = int(val)
+}
+
 // ---- Slices ---
 
 // ---- Maps ---
 
 // ---- Constructors ---
 
-//export turn_NewSTUNConn
-func turn_NewSTUNConn(nextConn CGoHandle) CGoHandle {
+//export turn_NewClient
+func turn_NewClient(config CGoHandle) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return handleFromPtr_Ptr_turn_STUNConn(turn.NewSTUNConn(ptrFromHandle_net_Conn(nextConn)))
+	cret, __err := turn.NewClient(ptrFromHandle_Ptr_turn_ClientConfig(config))
 
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		C.free(unsafe.Pointer(estr))
+		return handleFromPtr_Ptr_turn_Client(nil)
+	}
+	return handleFromPtr_Ptr_turn_Client(cret)
 }
 
 //export turn_NewServer
@@ -3473,21 +3480,6 @@ func turn_NewServer(config CGoHandle) CGoHandle {
 	return handleFromPtr_Ptr_turn_Server(cret)
 }
 
-//export turn_NewClient
-func turn_NewClient(config CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := turn.NewClient(ptrFromHandle_Ptr_turn_ClientConfig(config))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_Ptr_turn_Client(nil)
-	}
-	return handleFromPtr_Ptr_turn_Client(cret)
-}
-
 //export turn_NetConnReadFrom
 func turn_NetConnReadFrom(conn CGoHandle, p CGoHandle) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
@@ -3503,15 +3495,15 @@ func turn_NetConnReadFrom(conn CGoHandle, p CGoHandle) CGoHandle {
 	return handleFromPtr_turn_RecievedPacket(&cret)
 }
 
-// ---- Functions ---
-
-//export turn_DefaultPermissionHandler
-func turn_DefaultPermissionHandler(arg_0 CGoHandle, arg_1 CGoHandle) C.char {
+//export turn_NewSTUNConn
+func turn_NewSTUNConn(nextConn CGoHandle) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
 	defer C.PyEval_RestoreThread(_saved_thread)
-	return boolGoToPy(turn.DefaultPermissionHandler(ptrFromHandle_net_Addr(arg_0), deptrFromHandle_net_IP(arg_1)))
+	return handleFromPtr_Ptr_turn_STUNConn(turn.NewSTUNConn(ptrFromHandle_net_Conn(nextConn)))
 
 }
+
+// ---- Functions ---
 
 //export turn_NetConnWriteTo
 func turn_NetConnWriteTo(conn CGoHandle, p CGoHandle, addr CGoHandle) C.longlong {
@@ -3528,36 +3520,42 @@ func turn_NetConnWriteTo(conn CGoHandle, p CGoHandle, addr CGoHandle) C.longlong
 	return C.longlong(cret)
 }
 
-//export turn_GenerateAuthKey
-func turn_GenerateAuthKey(username *C.char, realm *C.char, password *C.char) CGoHandle {
+//export turn_NetListenPacket
+func turn_NetListenPacket(network *C.char, address *C.char) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	cret := turn.GenerateAuthKey(C.GoString(username), C.GoString(realm), C.GoString(password))
-
-	return handleFromPtr_Slice_byte(&cret)
-}
-
-//export turn_NetConnGetLocalAddr
-func turn_NetConnGetLocalAddr(conn CGoHandle) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return handleFromPtr_net_Addr(turn.NetConnGetLocalAddr(ptrFromHandle_net_PacketConn(conn)))
-
-}
-
-//export turn_NetResolveUDPAddr
-func turn_NetResolveUDPAddr(network *C.char, address *C.char) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := turn.NetResolveUDPAddr(C.GoString(network), C.GoString(address))
+	cret, __err := turn.NetListenPacket(C.GoString(network), C.GoString(address))
 
 	C.PyEval_RestoreThread(_saved_thread)
 	if __err != nil {
 		estr := C.CString(__err.Error())
 		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
 		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_net_UDPAddr(nil)
+		return handleFromPtr_net_PacketConn(nil)
 	}
-	return handleFromPtr_net_UDPAddr(&cret)
+	return handleFromPtr_net_PacketConn(cret)
+}
+
+//export turn_NetUDPAddrChangePort
+func turn_NetUDPAddrChangePort(addr CGoHandle, port C.longlong) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	var __err error
+	__err = turn.NetUDPAddrChangePort(ptrFromHandle_net_Addr(addr), int(port))
+
+	C.PyEval_RestoreThread(_saved_thread)
+	if __err != nil {
+		estr := C.CString(__err.Error())
+		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
+		return estr
+	}
+	return C.CString("")
+}
+
+//export turn_NetAddrString
+func turn_NetAddrString(addr CGoHandle) *C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return C.CString(turn.NetAddrString(ptrFromHandle_net_Addr(addr)))
+
 }
 
 //export turn_NetConnClose
@@ -3590,40 +3588,42 @@ func turn_NetConnSetTimeout(conn CGoHandle, sec C.longlong) *C.char {
 	return C.CString("")
 }
 
-//export turn_NetUDPAddrChangePort
-func turn_NetUDPAddrChangePort(addr CGoHandle, port C.longlong) *C.char {
+//export turn_NetResolveUDPAddr
+func turn_NetResolveUDPAddr(network *C.char, address *C.char) CGoHandle {
 	_saved_thread := C.PyEval_SaveThread()
-	var __err error
-	__err = turn.NetUDPAddrChangePort(ptrFromHandle_net_Addr(addr), int(port))
-
-	C.PyEval_RestoreThread(_saved_thread)
-	if __err != nil {
-		estr := C.CString(__err.Error())
-		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
-		return estr
-	}
-	return C.CString("")
-}
-
-//export turn_NetAddrString
-func turn_NetAddrString(addr CGoHandle) *C.char {
-	_saved_thread := C.PyEval_SaveThread()
-	defer C.PyEval_RestoreThread(_saved_thread)
-	return C.CString(turn.NetAddrString(ptrFromHandle_net_Addr(addr)))
-
-}
-
-//export turn_NetListenPacket
-func turn_NetListenPacket(network *C.char, address *C.char) CGoHandle {
-	_saved_thread := C.PyEval_SaveThread()
-	cret, __err := turn.NetListenPacket(C.GoString(network), C.GoString(address))
+	cret, __err := turn.NetResolveUDPAddr(C.GoString(network), C.GoString(address))
 
 	C.PyEval_RestoreThread(_saved_thread)
 	if __err != nil {
 		estr := C.CString(__err.Error())
 		C.PyErr_SetString(C.PyExc_RuntimeError, estr)
 		C.free(unsafe.Pointer(estr))
-		return handleFromPtr_net_PacketConn(nil)
+		return handleFromPtr_net_UDPAddr(nil)
 	}
-	return handleFromPtr_net_PacketConn(cret)
+	return handleFromPtr_net_UDPAddr(&cret)
+}
+
+//export turn_DefaultPermissionHandler
+func turn_DefaultPermissionHandler(arg_0 CGoHandle, arg_1 CGoHandle) C.char {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return boolGoToPy(turn.DefaultPermissionHandler(ptrFromHandle_net_Addr(arg_0), deptrFromHandle_net_IP(arg_1)))
+
+}
+
+//export turn_GenerateAuthKey
+func turn_GenerateAuthKey(username *C.char, realm *C.char, password *C.char) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	cret := turn.GenerateAuthKey(C.GoString(username), C.GoString(realm), C.GoString(password))
+
+	return handleFromPtr_Slice_byte(&cret)
+}
+
+//export turn_NetConnGetLocalAddr
+func turn_NetConnGetLocalAddr(conn CGoHandle) CGoHandle {
+	_saved_thread := C.PyEval_SaveThread()
+	defer C.PyEval_RestoreThread(_saved_thread)
+	return handleFromPtr_net_Addr(turn.NetConnGetLocalAddr(ptrFromHandle_net_PacketConn(conn)))
+
 }

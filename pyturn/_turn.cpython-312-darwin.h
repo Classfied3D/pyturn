@@ -407,22 +407,6 @@ extern void Slice_net_Addr_set(long long handle, GoInt _idx, long long _vl);
 extern void Slice_net_Addr_append(long long handle, long long _vl);
 extern char* turn_RelayAddressGenerator_Validate(long long _handle);
 
-// --- wrapping struct: turn.STUNConn ---
-//
-extern long long turn_STUNConn_CTor();
-extern long long turn_STUNConn_WriteTo(long long _handle, long long p, long long q);
-extern char* turn_STUNConn_Close(long long _handle);
-extern long long turn_STUNConn_LocalAddr(long long _handle);
-extern char* turn_STUNConn_SetDeadline(long long _handle, long long t);
-extern char* turn_STUNConn_SetReadDeadline(long long _handle, long long t);
-extern char* turn_STUNConn_SetWriteDeadline(long long _handle, long long t);
-
-// --- wrapping struct: turn.Server ---
-//
-extern long long turn_Server_CTor();
-extern long long turn_Server_AllocationCount(long long _handle);
-extern char* turn_Server_Close(long long _handle);
-
 // --- wrapping struct: turn.Client ---
 //
 extern long long turn_Client_CTor();
@@ -441,6 +425,12 @@ extern char* turn_Client_CreatePermission(long long _handle, long long addrs);
 extern long long turn_Client_PerformTransaction(long long _handle, long long msg, long long to, char ignoreResult);
 extern void turn_Client_OnDeallocated(long long _handle, long long arg_0, char goRun);
 extern char turn_Client_HandleInbound(long long _handle, long long data, long long myfrom);
+
+// --- wrapping struct: turn.Server ---
+//
+extern long long turn_Server_CTor();
+extern long long turn_Server_AllocationCount(long long _handle);
+extern char* turn_Server_Close(long long _handle);
 
 // --- wrapping struct: turn.ClientConfig ---
 //
@@ -474,31 +464,6 @@ extern void turn_ListenerConfig_Listener_Set(long long handle, long long val);
 extern long long turn_ListenerConfig_RelayAddressGenerator_Get(long long handle);
 extern void turn_ListenerConfig_RelayAddressGenerator_Set(long long handle, long long val);
 
-// --- wrapping struct: turn.RelayAddressGeneratorNone ---
-//
-extern long long turn_RelayAddressGeneratorNone_CTor();
-extern char* turn_RelayAddressGeneratorNone_Address_Get(long long handle);
-extern void turn_RelayAddressGeneratorNone_Address_Set(long long handle, char* val);
-extern long long turn_RelayAddressGeneratorNone_Net_Get(long long handle);
-extern void turn_RelayAddressGeneratorNone_Net_Set(long long handle, long long val);
-extern char* turn_RelayAddressGeneratorNone_Validate(long long _handle);
-
-// --- wrapping struct: turn.ServerConfig ---
-//
-extern long long turn_ServerConfig_CTor();
-extern long long turn_ServerConfig_PacketConnConfigs_Get(long long handle);
-extern void turn_ServerConfig_PacketConnConfigs_Set(long long handle, long long val);
-extern long long turn_ServerConfig_ListenerConfigs_Get(long long handle);
-extern void turn_ServerConfig_ListenerConfigs_Set(long long handle, long long val);
-extern long long turn_ServerConfig_LoggerFactory_Get(long long handle);
-extern void turn_ServerConfig_LoggerFactory_Set(long long handle, long long val);
-extern char* turn_ServerConfig_Realm_Get(long long handle);
-extern void turn_ServerConfig_Realm_Set(long long handle, char* val);
-extern long long turn_ServerConfig_ChannelBindTimeout_Get(long long handle);
-extern void turn_ServerConfig_ChannelBindTimeout_Set(long long handle, long long val);
-extern long long turn_ServerConfig_InboundMTU_Get(long long handle);
-extern void turn_ServerConfig_InboundMTU_Set(long long handle, long long val);
-
 // --- wrapping struct: turn.PacketConnConfig ---
 //
 extern long long turn_PacketConnConfig_CTor();
@@ -514,6 +479,15 @@ extern long long turn_RecievedPacket_N_Get(long long handle);
 extern void turn_RecievedPacket_N_Set(long long handle, long long val);
 extern long long turn_RecievedPacket_Addr_Get(long long handle);
 extern void turn_RecievedPacket_Addr_Set(long long handle, long long val);
+
+// --- wrapping struct: turn.RelayAddressGeneratorNone ---
+//
+extern long long turn_RelayAddressGeneratorNone_CTor();
+extern char* turn_RelayAddressGeneratorNone_Address_Get(long long handle);
+extern void turn_RelayAddressGeneratorNone_Address_Set(long long handle, char* val);
+extern long long turn_RelayAddressGeneratorNone_Net_Get(long long handle);
+extern void turn_RelayAddressGeneratorNone_Net_Set(long long handle, long long val);
+extern char* turn_RelayAddressGeneratorNone_Validate(long long _handle);
 
 // --- wrapping struct: turn.RelayAddressGeneratorPortRange ---
 //
@@ -544,20 +518,46 @@ extern void turn_RelayAddressGeneratorStatic_Address_Set(long long handle, char*
 extern long long turn_RelayAddressGeneratorStatic_Net_Get(long long handle);
 extern void turn_RelayAddressGeneratorStatic_Net_Set(long long handle, long long val);
 extern char* turn_RelayAddressGeneratorStatic_Validate(long long _handle);
-extern long long turn_NewSTUNConn(long long nextConn);
-extern long long turn_NewServer(long long config);
+
+// --- wrapping struct: turn.STUNConn ---
+//
+extern long long turn_STUNConn_CTor();
+extern long long turn_STUNConn_WriteTo(long long _handle, long long p, long long q);
+extern char* turn_STUNConn_Close(long long _handle);
+extern long long turn_STUNConn_LocalAddr(long long _handle);
+extern char* turn_STUNConn_SetDeadline(long long _handle, long long t);
+extern char* turn_STUNConn_SetReadDeadline(long long _handle, long long t);
+extern char* turn_STUNConn_SetWriteDeadline(long long _handle, long long t);
+
+// --- wrapping struct: turn.ServerConfig ---
+//
+extern long long turn_ServerConfig_CTor();
+extern long long turn_ServerConfig_PacketConnConfigs_Get(long long handle);
+extern void turn_ServerConfig_PacketConnConfigs_Set(long long handle, long long val);
+extern long long turn_ServerConfig_ListenerConfigs_Get(long long handle);
+extern void turn_ServerConfig_ListenerConfigs_Set(long long handle, long long val);
+extern long long turn_ServerConfig_LoggerFactory_Get(long long handle);
+extern void turn_ServerConfig_LoggerFactory_Set(long long handle, long long val);
+extern char* turn_ServerConfig_Realm_Get(long long handle);
+extern void turn_ServerConfig_Realm_Set(long long handle, char* val);
+extern long long turn_ServerConfig_ChannelBindTimeout_Get(long long handle);
+extern void turn_ServerConfig_ChannelBindTimeout_Set(long long handle, long long val);
+extern long long turn_ServerConfig_InboundMTU_Get(long long handle);
+extern void turn_ServerConfig_InboundMTU_Set(long long handle, long long val);
 extern long long turn_NewClient(long long config);
+extern long long turn_NewServer(long long config);
 extern long long turn_NetConnReadFrom(long long conn, long long p);
-extern char turn_DefaultPermissionHandler(long long arg_0, long long arg_1);
+extern long long turn_NewSTUNConn(long long nextConn);
 extern long long turn_NetConnWriteTo(long long conn, long long p, long long addr);
-extern long long turn_GenerateAuthKey(char* username, char* realm, char* password);
-extern long long turn_NetConnGetLocalAddr(long long conn);
-extern long long turn_NetResolveUDPAddr(char* network, char* address);
-extern char* turn_NetConnClose(long long conn);
-extern char* turn_NetConnSetTimeout(long long conn, long long sec);
+extern long long turn_NetListenPacket(char* network, char* address);
 extern char* turn_NetUDPAddrChangePort(long long addr, long long port);
 extern char* turn_NetAddrString(long long addr);
-extern long long turn_NetListenPacket(char* network, char* address);
+extern char* turn_NetConnClose(long long conn);
+extern char* turn_NetConnSetTimeout(long long conn, long long sec);
+extern long long turn_NetResolveUDPAddr(char* network, char* address);
+extern char turn_DefaultPermissionHandler(long long arg_0, long long arg_1);
+extern long long turn_GenerateAuthKey(char* username, char* realm, char* password);
+extern long long turn_NetConnGetLocalAddr(long long conn);
 
 #ifdef __cplusplus
 }
