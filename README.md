@@ -32,11 +32,11 @@ print("Relayed Address:", relayed_addr)
 # Set up local connection
 extenal_port = 50001
 # Get external IP (we are connecting to ourselves)
-external_ip = urllib.request.urlopen("http://v4.ident.me")
+external_ip = urllib.request.urlopen("http://v4.ident.me") \
   .read().decode("utf8")
 external_addr = (external_ip, extenal_port)
 external_sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-external_sock.bind(("0.0.0.0", port))
+external_sock.bind(("0.0.0.0", external_port))
 print("External Address:", external_addr)
 
 # Create connection

@@ -33,6 +33,7 @@
 * Copy `__init__.py` to `pyturn/__init__.py`
 
 ## 6. Build
+* Comment/Uncomment the labelled line in setup.py if compiling for a different architchure
 * (From the pyturn source directory) `python -m build -w .`
 
 ## 7. Install
